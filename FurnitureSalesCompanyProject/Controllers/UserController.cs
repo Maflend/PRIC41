@@ -18,7 +18,11 @@ namespace FurnitureSalesCompanyProject.Controllers
             {
                 var currentUser = GetUserData(user.Login);
                 if(currentUser !=null)
+                {
                     CurrentUser.User = currentUser;
+                    if (CurrentUser.User is Stuff)
+                        CurrentUser.isCustomer = false;
+                }
                 return true;
             }
             return false;

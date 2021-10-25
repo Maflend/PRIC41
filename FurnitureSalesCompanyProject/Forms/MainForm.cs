@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FurnitureSalesCompanyProject.StaticData;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,29 +19,31 @@ namespace FurnitureSalesCompanyProject.Forms
         {
            
             InitializeComponent();
-            //if (authentification.DialogResult == DialogResult.Yes)
-            //{
-
-            //}
-            //else
-            //    this.Close();
+            if(CurrentUser.isCustomer == true)
+            {
+                btnOpenCustomersForm.Visible = false;
+            }
         }
-
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            AuthentificationForm authentification = new AuthentificationForm();
+            authentification.ShowDialog();
+            if (authentification.DialogResult != DialogResult.Yes)
+                this.Close();
+        }
         private void btnCustomers_MouseHover(object sender, EventArgs e)
         {
-            btnCustomers.BackColor = Color.FromArgb(91,61,81);
-        }
-
-        private void btnCustomers_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender);
-            OpenChildForm(new CustomersForm(),sender);
-            
+            btnOpenCustomersForm.BackColor = Color.FromArgb(91,61,81);
         }
         private void btnOpenFurnituresForm_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
             OpenChildForm(new FurnitureForm(), sender);
+        }
+        private void btnOpenCustomersForm_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            OpenChildForm(new CustomersForm(), sender);
         }
         private void OpenChildForm(Form childForm, object sender)
         {
@@ -81,12 +84,6 @@ namespace FurnitureSalesCompanyProject.Forms
             }
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            AuthentificationForm authentification = new AuthentificationForm();
-            authentification.ShowDialog();
-            if (authentification.DialogResult != DialogResult.Yes)
-                this.Close();
-        }
+      
     }
 }
