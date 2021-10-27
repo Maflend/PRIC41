@@ -22,6 +22,8 @@ namespace FurnitureSalesCompanyProject.Controllers
                     CurrentUser.User = currentUser;
                     if (CurrentUser.User is Stuff)
                         CurrentUser.isCustomer = false;
+                    if (CurrentUser.User is Customer)
+                        CurrentUser.isCustomer = true;
                 }
                 return true;
             }

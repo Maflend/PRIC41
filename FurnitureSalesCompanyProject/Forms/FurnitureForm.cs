@@ -1,4 +1,5 @@
 ﻿using FurnitureSalesCompanyProject.Controllers;
+using FurnitureSalesCompanyProject.DTO;
 using FurnitureSalesCompanyProject.Models;
 using FurnitureSalesCompanyProject.StaticData;
 using System;
@@ -15,7 +16,7 @@ namespace FurnitureSalesCompanyProject.Forms
 {
     public partial class FurnitureForm : Form
     {
-        FurnitureContext db;
+        FurnitureController furnitureController;
         public FurnitureForm()
         {
             InitializeComponent();
@@ -24,24 +25,12 @@ namespace FurnitureSalesCompanyProject.Forms
             {
                 btnCreateProduct.Visible = false;
             }
+            
         }
 
         private void FurnitureForm_Load(object sender, EventArgs e)
         {
-            //FurnitureController controller = new FurnitureController();
-            //var fur = controller.GetFurnitures();
-
-            db = new FurnitureContext();
-            var furnitures = db.FurnitureNames
-                .SelectMany(f => f.Furnituries, (furname, fur) => new { furname, fur })
-                .Select(f => new { Id = f.fur.Id, Name = f.furname.Name, Model = f.fur.Model, Specifications = f.fur.Specifications, Cost = f.fur.Cost })
-                .ToList();
-            dgvFurnitures.DataSource = furnitures;
-            dgvFurnitures.Columns["Id"].Visible = false;
-            dgvFurnitures.Columns["Name"].HeaderText = "Наименование";
-            dgvFurnitures.Columns["Model"].HeaderText = "Модель";
-            dgvFurnitures.Columns["Specifications"].HeaderText = "Характеристики";
-            dgvFurnitures.Columns["Cost"].HeaderText = "Цена";
+            SetDataInDGV();
         }
 
         private void btnCreateProduct_Click(object sender, EventArgs e)
@@ -52,14 +41,26 @@ namespace FurnitureSalesCompanyProject.Forms
 
         private void dgvFurnitures_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            db = new FurnitureContext();
             int id = int.Parse(dgvFurnitures.Rows[e.RowIndex].Cells[0].Value.ToString());
             string name = dgvFurnitures.Rows[e.RowIndex].Cells[1].Value.ToString();
-            var currentFurniture = db.Furnitures.FirstOrDefault(f => f.Id == id);
-            currentFurniture.FurnitureName = new FurnitureName() {Name = name };
-
-            FurnitureDetails furnitureDetails = new FurnitureDetails(currentFurniture);
+            FurnitureDetails furnitureDetails = new FurnitureDetails(id, name);
             furnitureDetails.ShowDialog();
+            if (furnitureDetails.DialogResult == DialogResult.Yes)
+                SetDataInDGV();
+
+        }
+        private void SetDataInDGV()
+        {
+            furnitureController = new FurnitureController();
+            var furnitures = furnitureController.GetAllFurnitureForDGVDto();
+            dgvFurnitures.DataSource = furnitures;
+            dgvFurnitures.Columns["Id"].Visible = false;
+            dgvFurnitures.Columns["Name"].HeaderText = "Наименование";
+            dgvFurnitures.Columns["Model"].HeaderText = "Модель";
+            dgvFurnitures.Columns["Specifications"].HeaderText = "Характеристики";
+            dgvFurnitures.Columns["Cost"].HeaderText = "Цена";
         }
     }
+
+   
 }

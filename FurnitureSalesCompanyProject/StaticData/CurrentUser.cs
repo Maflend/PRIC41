@@ -10,7 +10,7 @@ namespace FurnitureSalesCompanyProject.StaticData
     public static class CurrentUser
     {
         public static User User { get; set; }
-        public static bool isCustomer { get; set; } = true;
+        public static bool isCustomer { get; set; }
     }
     
 }

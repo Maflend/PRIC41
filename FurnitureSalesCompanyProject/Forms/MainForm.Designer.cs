@@ -33,12 +33,14 @@ namespace FurnitureSalesCompanyProject.Forms
             this.btnOpenFurnituresForm = new System.Windows.Forms.Button();
             this.btnOpenCustomersForm = new System.Windows.Forms.Button();
             this.panelContent = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.panelMenuTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenuTab
             // 
             this.panelMenuTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(61)))), ((int)(((byte)(71)))));
+            this.panelMenuTab.Controls.Add(this.btnLogout);
             this.panelMenuTab.Controls.Add(this.btnOpenFurnituresForm);
             this.panelMenuTab.Controls.Add(this.btnOpenCustomersForm);
             this.panelMenuTab.Dock = System.Windows.Forms.DockStyle.Left;
@@ -87,6 +89,22 @@ namespace FurnitureSalesCompanyProject.Forms
             this.panelContent.Size = new System.Drawing.Size(700, 480);
             this.panelContent.TabIndex = 1;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Perpetua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnLogout.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnLogout.Location = new System.Drawing.Point(0, 426);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(145, 54);
+            this.btnLogout.TabIndex = 2;
+            this.btnLogout.Text = "   Сменить пользователя";
+            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -109,5 +127,6 @@ namespace FurnitureSalesCompanyProject.Forms
         private System.Windows.Forms.Button btnOpenCustomersForm;
         private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.Button btnOpenFurnituresForm;
+        private System.Windows.Forms.Button btnLogout;
     }
 }

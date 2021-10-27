@@ -29,80 +29,119 @@ namespace FurnitureSalesCompanyProject.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblFurnitureName = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.lblName = new System.Windows.Forms.Label();
-            this.lblSpecifications = new System.Windows.Forms.Label();
-            this.lblCost = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnBuy = new System.Windows.Forms.Button();
+            this.tbFurnitureName = new System.Windows.Forms.TextBox();
+            this.tbModel = new System.Windows.Forms.TextBox();
+            this.tbSpecifications = new System.Windows.Forms.TextBox();
+            this.tbCost = new System.Windows.Forms.TextBox();
+            this.tbQuantity = new System.Windows.Forms.TextBox();
+            this.lblQuantity = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.lblAnswer = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // lblFurnitureName
+            // btnSave
             // 
-            this.lblFurnitureName.AutoSize = true;
-            this.lblFurnitureName.Location = new System.Drawing.Point(121, 28);
-            this.lblFurnitureName.Name = "lblFurnitureName";
-            this.lblFurnitureName.Size = new System.Drawing.Size(38, 15);
-            this.lblFurnitureName.TabIndex = 0;
-            this.lblFurnitureName.Text = "label1";
+            this.btnSave.Location = new System.Drawing.Point(126, 223);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(106, 32);
+            this.btnSave.TabIndex = 1;
+            this.btnSave.Text = "Сохранить";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // button1
+            // btnBuy
             // 
-            this.button1.Location = new System.Drawing.Point(342, 270);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBuy.Location = new System.Drawing.Point(126, 261);
+            this.btnBuy.Name = "btnBuy";
+            this.btnBuy.Size = new System.Drawing.Size(106, 32);
+            this.btnBuy.TabIndex = 1;
+            this.btnBuy.Text = "Купить";
+            this.btnBuy.UseVisualStyleBackColor = true;
+            this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
             // 
-            // button2
+            // tbFurnitureName
             // 
-            this.button2.Location = new System.Drawing.Point(48, 270);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button1";
-            this.button2.UseVisualStyleBackColor = true;
+            this.tbFurnitureName.Location = new System.Drawing.Point(14, 12);
+            this.tbFurnitureName.Name = "tbFurnitureName";
+            this.tbFurnitureName.Size = new System.Drawing.Size(207, 23);
+            this.tbFurnitureName.TabIndex = 2;
             // 
-            // lblName
+            // tbModel
             // 
-            this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(121, 60);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(38, 15);
-            this.lblName.TabIndex = 0;
-            this.lblName.Text = "label1";
+            this.tbModel.Location = new System.Drawing.Point(14, 41);
+            this.tbModel.Name = "tbModel";
+            this.tbModel.Size = new System.Drawing.Size(207, 23);
+            this.tbModel.TabIndex = 2;
             // 
-            // lblSpecifications
+            // tbSpecifications
             // 
-            this.lblSpecifications.AutoSize = true;
-            this.lblSpecifications.Location = new System.Drawing.Point(121, 86);
-            this.lblSpecifications.Name = "lblSpecifications";
-            this.lblSpecifications.Size = new System.Drawing.Size(38, 15);
-            this.lblSpecifications.TabIndex = 0;
-            this.lblSpecifications.Text = "label1";
+            this.tbSpecifications.Location = new System.Drawing.Point(14, 70);
+            this.tbSpecifications.Name = "tbSpecifications";
+            this.tbSpecifications.Size = new System.Drawing.Size(207, 23);
+            this.tbSpecifications.TabIndex = 2;
             // 
-            // lblCost
+            // tbCost
             // 
-            this.lblCost.AutoSize = true;
-            this.lblCost.Location = new System.Drawing.Point(121, 110);
-            this.lblCost.Name = "lblCost";
-            this.lblCost.Size = new System.Drawing.Size(38, 15);
-            this.lblCost.TabIndex = 0;
-            this.lblCost.Text = "label1";
+            this.tbCost.Location = new System.Drawing.Point(14, 99);
+            this.tbCost.Name = "tbCost";
+            this.tbCost.Size = new System.Drawing.Size(207, 23);
+            this.tbCost.TabIndex = 2;
+            // 
+            // tbQuantity
+            // 
+            this.tbQuantity.Location = new System.Drawing.Point(121, 142);
+            this.tbQuantity.Name = "tbQuantity";
+            this.tbQuantity.Size = new System.Drawing.Size(100, 23);
+            this.tbQuantity.TabIndex = 2;
+            // 
+            // lblQuantity
+            // 
+            this.lblQuantity.AutoSize = true;
+            this.lblQuantity.Location = new System.Drawing.Point(12, 145);
+            this.lblQuantity.Name = "lblQuantity";
+            this.lblQuantity.Size = new System.Drawing.Size(100, 15);
+            this.lblQuantity.TabIndex = 0;
+            this.lblQuantity.Text = "Введите кол-во : ";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(12, 223);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(106, 32);
+            this.btnCancel.TabIndex = 1;
+            this.btnCancel.Text = "Отмена";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // lblAnswer
+            // 
+            this.lblAnswer.AutoSize = true;
+            this.lblAnswer.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblAnswer.Location = new System.Drawing.Point(126, 201);
+            this.lblAnswer.Name = "lblAnswer";
+            this.lblAnswer.Size = new System.Drawing.Size(58, 19);
+            this.lblAnswer.TabIndex = 0;
+            this.lblAnswer.Text = "Answer";
             // 
             // FurnitureDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(440, 305);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.lblCost);
-            this.Controls.Add(this.lblSpecifications);
-            this.Controls.Add(this.lblName);
-            this.Controls.Add(this.lblFurnitureName);
+            this.ClientSize = new System.Drawing.Size(243, 301);
+            this.Controls.Add(this.tbQuantity);
+            this.Controls.Add(this.tbCost);
+            this.Controls.Add(this.tbSpecifications);
+            this.Controls.Add(this.tbModel);
+            this.Controls.Add(this.tbFurnitureName);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnBuy);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.lblAnswer);
+            this.Controls.Add(this.lblQuantity);
             this.Name = "FurnitureDetails";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FurnitureDetails";
             this.Load += new System.EventHandler(this.FurnitureDetails_Load);
             this.ResumeLayout(false);
@@ -111,12 +150,15 @@ namespace FurnitureSalesCompanyProject.Forms
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblFurnitureName;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label lblSpecifications;
-        private System.Windows.Forms.Label lblCost;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnBuy;
+        private System.Windows.Forms.TextBox tbFurnitureName;
+        private System.Windows.Forms.TextBox tbModel;
+        private System.Windows.Forms.TextBox tbSpecifications;
+        private System.Windows.Forms.TextBox tbCost;
+        private System.Windows.Forms.TextBox tbQuantity;
+        private System.Windows.Forms.Label lblQuantity;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label lblAnswer;
     }
 }

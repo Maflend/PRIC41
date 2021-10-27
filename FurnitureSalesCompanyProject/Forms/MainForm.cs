@@ -17,19 +17,15 @@ namespace FurnitureSalesCompanyProject.Forms
         private Button currentButton;
         public MainForm()
         {
-           
+            StartApplication();
             InitializeComponent();
-            if(CurrentUser.isCustomer == true)
-            {
-                btnOpenCustomersForm.Visible = false;
-            }
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
-            AuthentificationForm authentification = new AuthentificationForm();
-            authentification.ShowDialog();
-            if (authentification.DialogResult != DialogResult.Yes)
-                this.Close();
+            if (CurrentUser.isCustomer == true)
+            {
+                btnOpenCustomersForm.Visible = false;
+            }
         }
         private void btnCustomers_MouseHover(object sender, EventArgs e)
         {
@@ -84,6 +80,17 @@ namespace FurnitureSalesCompanyProject.Forms
             }
         }
 
-      
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Retry;
+            this.Close();
+        }
+        private void StartApplication()
+        {
+            AuthentificationForm authentification = new AuthentificationForm();
+            authentification.ShowDialog();
+            if (authentification.DialogResult != DialogResult.Yes)
+                this.Close();
+        }
     }
 }

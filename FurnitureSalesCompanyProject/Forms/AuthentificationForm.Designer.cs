@@ -35,6 +35,7 @@ namespace FurnitureSalesCompanyProject.Forms
             this.tbLogin = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.tbPassword = new System.Windows.Forms.TextBox();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnLogIn
@@ -89,6 +90,16 @@ namespace FurnitureSalesCompanyProject.Forms
             this.tbPassword.Size = new System.Drawing.Size(154, 23);
             this.tbPassword.TabIndex = 3;
             // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblStatus.Location = new System.Drawing.Point(140, 125);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(46, 17);
+            this.lblStatus.TabIndex = 2;
+            this.lblStatus.Text = "Status";
+            // 
             // AuthentificationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -96,6 +107,7 @@ namespace FurnitureSalesCompanyProject.Forms
             this.ClientSize = new System.Drawing.Size(274, 186);
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.tbLogin);
+            this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.btnSignUp);
@@ -116,5 +128,6 @@ namespace FurnitureSalesCompanyProject.Forms
         private System.Windows.Forms.TextBox tbLogin;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox tbPassword;
+        private System.Windows.Forms.Label lblStatus;
     }
 }

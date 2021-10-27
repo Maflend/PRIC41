@@ -27,15 +27,11 @@ namespace FurnitureSalesCompanyProject.Forms
             UserController userController = new UserController();
             if(userController.LogIn(user))
             {
-                MessageBox.Show("TRUE");
                 this.DialogResult = DialogResult.Yes;
-                
-                //lblLogin.Text = ((Customer)CurrentUser.User).Name;
             }
             else
             {
-                MessageBox.Show("FALSE");
-                
+                lblStatus.Text = "Вход не выполнен";
             }
         }
 
