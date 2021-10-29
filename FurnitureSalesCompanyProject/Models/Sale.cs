@@ -11,7 +11,7 @@ namespace FurnitureSalesCompanyProject.Models
     {
         [Key] public int Id { get; set; }
         [Required] public Contract Contract { get; set; }
-        [Required] public FurnitureFurnitureForDGVDto Furniture { get; set; }
+        [Required] public Furniture Furniture { get; set; }
         [Required] public int Quantity { get; set; }
     }
 }

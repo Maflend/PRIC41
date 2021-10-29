@@ -1,4 +1,5 @@
 ﻿using FurnitureSalesCompanyProject.Controllers;
+using FurnitureSalesCompanyProject.DTO;
 using FurnitureSalesCompanyProject.Models;
 using FurnitureSalesCompanyProject.StaticData;
 using System;
@@ -15,7 +16,8 @@ namespace FurnitureSalesCompanyProject.Forms
 {
     public partial class FurnitureDetails : Form
     {
-        private FurnitureFurnitureForDGVDto Furniture { get; set; }
+       
+        private Furniture currentFurniture;
         private FurnitureController controller = new FurnitureController();
         private Size windowsSize;
         public FurnitureDetails(int id, string name)
@@ -43,16 +45,41 @@ namespace FurnitureSalesCompanyProject.Forms
                 this.MinimumSize = windowsSize;
             }
             SetDataInUserControls(id, name);
+            currentFurniture = ContextStatic.FurnitureContext.Furnitures.FirstOrDefault(f => f.Id == id);
         }
 
         private void FurnitureDetails_Load(object sender, EventArgs e)
         {
             lblAnswer.Text = "";
+            if (SaleStatic.Sales != null)
+            {
+                int tmp = SaleStatic.Sales.Where(s => s.Furniture.Id == currentFurniture.Id).Sum(s => s.Quantity);
+                tbQuantity.Text = tmp.ToString();
+            }
         }
 
         private void btnBuy_Click(object sender, EventArgs e)
         {
+            if (int.TryParse(tbQuantity.Text, out int quantity))
+            {
 
+                if (SaleStatic.Sales != null && SaleStatic.Sales.Any(s => s.Furniture.Id == currentFurniture.Id))
+                {
+                    for (int i = 0; i < SaleStatic.Sales.Count(); i++)
+                    {
+                        if (SaleStatic.Sales[i].Furniture.Id == currentFurniture.Id)
+                        {
+                            SaleStatic.Sales[i].Quantity = quantity;
+                        }
+                    }
+                }
+                else
+                {
+                    Sale sale = new Sale() { Furniture = currentFurniture, Quantity = quantity };
+                    SaleStatic.Sales.Add(sale);
+                }
+                this.DialogResult = DialogResult.Retry;
+            }
         }
 
         private async void btnSave_Click(object sender, EventArgs e)
@@ -81,20 +108,20 @@ namespace FurnitureSalesCompanyProject.Forms
         private void SetDataInUserControls(int id, string name)
         {
             var furniture = controller.GetById(id);
-            Furniture = furniture;
+            currentFurniture = furniture;
             tbFurnitureName.Text = name;
-            tbModel.Text = Furniture.Model;
-            tbSpecifications.Text = Furniture.Specifications;
-            tbCost.Text = Furniture.Cost.ToString();
+            tbModel.Text = currentFurniture.Model;
+            tbSpecifications.Text = currentFurniture.Specifications;
+            tbCost.Text = currentFurniture.Cost.ToString();
         }
-        private FurnitureFurnitureForDGVDto GetDataFromUserControls()
+        private Furniture GetDataFromUserControls()
         {
-            FurnitureFurnitureForDGVDto furniture = new FurnitureFurnitureForDGVDto();
+            Furniture furniture = new Furniture();
             int number;
             if (int.TryParse(tbCost.Text, out number))
             {
                 furniture.Cost = number;
-                furniture.Id = Furniture.Id;
+                furniture.Id = currentFurniture.Id;
                 furniture.Model = tbModel.Text;
                 furniture.Specifications = tbSpecifications.Text;
             }

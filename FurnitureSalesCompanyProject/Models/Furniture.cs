@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FurnitureSalesCompanyProject.Models
 {
-    public class FurnitureFurnitureForDGVDto
+    public class Furniture
     {
         [Key]public int Id { get; set; }
         [Required] public string Model { get; set; }

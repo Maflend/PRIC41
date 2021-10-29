@@ -16,12 +16,12 @@ namespace FurnitureSalesCompanyProject.Controllers
             db = new FurnitureContext();
         }
 
-        public FurnitureFurnitureForDGVDto GetById(int id)
+        public Furniture GetById(int id)
         {
             var furniture = db.Furnitures.FirstOrDefault(f => f.Id == id);
             return furniture;
         }
-        public bool Update(FurnitureFurnitureForDGVDto newFurniture)
+        public bool Update(Furniture newFurniture)
         {
             db = new FurnitureContext();
             var furniture = db.Furnitures.FirstOrDefault(f => f.Id == newFurniture.Id);

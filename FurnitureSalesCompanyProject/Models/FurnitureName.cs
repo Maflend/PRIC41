@@ -10,6 +10,6 @@ namespace FurnitureSalesCompanyProject.Models
     public class FurnitureName
     {
         [Key]public string Name { get; set; }
-        public List<FurnitureFurnitureForDGVDto> Furnituries { get; set; }
+        public List<Furniture> Furnituries { get; set; }
     }
 }

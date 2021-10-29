@@ -30,16 +30,20 @@ namespace FurnitureSalesCompanyProject.Forms
         private void InitializeComponent()
         {
             this.panelMenuTab = new System.Windows.Forms.Panel();
+            this.btnOpenContructsForm = new System.Windows.Forms.Button();
+            this.btnOpenCartForm = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.btnOpenFurnituresForm = new System.Windows.Forms.Button();
             this.btnOpenCustomersForm = new System.Windows.Forms.Button();
             this.panelContent = new System.Windows.Forms.Panel();
-            this.btnLogout = new System.Windows.Forms.Button();
             this.panelMenuTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenuTab
             // 
             this.panelMenuTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(61)))), ((int)(((byte)(71)))));
+            this.panelMenuTab.Controls.Add(this.btnOpenContructsForm);
+            this.panelMenuTab.Controls.Add(this.btnOpenCartForm);
             this.panelMenuTab.Controls.Add(this.btnLogout);
             this.panelMenuTab.Controls.Add(this.btnOpenFurnituresForm);
             this.panelMenuTab.Controls.Add(this.btnOpenCustomersForm);
@@ -48,6 +52,53 @@ namespace FurnitureSalesCompanyProject.Forms
             this.panelMenuTab.Name = "panelMenuTab";
             this.panelMenuTab.Size = new System.Drawing.Size(145, 480);
             this.panelMenuTab.TabIndex = 0;
+            // 
+            // btnOpenContructsForm
+            // 
+            this.btnOpenContructsForm.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnOpenContructsForm.FlatAppearance.BorderSize = 0;
+            this.btnOpenContructsForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpenContructsForm.Font = new System.Drawing.Font("Perpetua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnOpenContructsForm.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnOpenContructsForm.Location = new System.Drawing.Point(0, 162);
+            this.btnOpenContructsForm.Name = "btnOpenContructsForm";
+            this.btnOpenContructsForm.Size = new System.Drawing.Size(145, 54);
+            this.btnOpenContructsForm.TabIndex = 4;
+            this.btnOpenContructsForm.Text = "   Контракты";
+            this.btnOpenContructsForm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOpenContructsForm.UseVisualStyleBackColor = false;
+            // 
+            // btnOpenCartForm
+            // 
+            this.btnOpenCartForm.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnOpenCartForm.FlatAppearance.BorderSize = 0;
+            this.btnOpenCartForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpenCartForm.Font = new System.Drawing.Font("Perpetua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnOpenCartForm.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnOpenCartForm.Location = new System.Drawing.Point(0, 108);
+            this.btnOpenCartForm.Name = "btnOpenCartForm";
+            this.btnOpenCartForm.Size = new System.Drawing.Size(145, 54);
+            this.btnOpenCartForm.TabIndex = 3;
+            this.btnOpenCartForm.Text = "   Корзина";
+            this.btnOpenCartForm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOpenCartForm.UseVisualStyleBackColor = false;
+            this.btnOpenCartForm.Click += new System.EventHandler(this.btnOpenCartForm_Click);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Perpetua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnLogout.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnLogout.Location = new System.Drawing.Point(0, 426);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(145, 54);
+            this.btnLogout.TabIndex = 2;
+            this.btnLogout.Text = "   Сменить пользователя";
+            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnOpenFurnituresForm
             // 
@@ -89,22 +140,6 @@ namespace FurnitureSalesCompanyProject.Forms
             this.panelContent.Size = new System.Drawing.Size(700, 480);
             this.panelContent.TabIndex = 1;
             // 
-            // btnLogout
-            // 
-            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Perpetua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnLogout.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnLogout.Location = new System.Drawing.Point(0, 426);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(145, 54);
-            this.btnLogout.TabIndex = 2;
-            this.btnLogout.Text = "   Сменить пользователя";
-            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.UseVisualStyleBackColor = false;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -128,5 +163,7 @@ namespace FurnitureSalesCompanyProject.Forms
         private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.Button btnOpenFurnituresForm;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnOpenCartForm;
+        private System.Windows.Forms.Button btnOpenContructsForm;
     }
 }

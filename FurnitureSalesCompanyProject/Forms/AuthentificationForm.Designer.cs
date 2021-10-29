@@ -115,6 +115,7 @@ namespace FurnitureSalesCompanyProject.Forms
             this.Name = "AuthentificationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AuthentificationFrom";
+            this.Load += new System.EventHandler(this.AuthentificationForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

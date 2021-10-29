@@ -35,7 +35,7 @@ namespace FurnitureSalesCompanyProject.Forms
         private void CreateFurniture()  
             // Добавить отдельый текстбокс, и если пользователь хочет новую категорию моделей то пусть вписывает
         {
-            FurnitureFurnitureForDGVDto furniture = new FurnitureFurnitureForDGVDto();
+            Furniture furniture = new Furniture();
             furniture.Model = tbName.Text;
             furniture.Specifications = tbSpecifications.Text;
             furniture.Cost = int.Parse(tbCost.Text);

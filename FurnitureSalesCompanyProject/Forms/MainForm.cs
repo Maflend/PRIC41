@@ -25,6 +25,7 @@ namespace FurnitureSalesCompanyProject.Forms
             if (CurrentUser.isCustomer == true)
             {
                 btnOpenCustomersForm.Visible = false;
+                btnOpenContructsForm.Visible = false;
             }
         }
         private void btnCustomers_MouseHover(object sender, EventArgs e)
@@ -91,6 +92,12 @@ namespace FurnitureSalesCompanyProject.Forms
             authentification.ShowDialog();
             if (authentification.DialogResult != DialogResult.Yes)
                 this.Close();
+        }
+
+        private void btnOpenCartForm_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            OpenChildForm(new CartForm(), sender);
         }
     }
 }

@@ -41,5 +41,10 @@ namespace FurnitureSalesCompanyProject.Forms
             registrationForm.ShowDialog();
 
         }
+
+        private void AuthentificationForm_Load(object sender, EventArgs e)
+        {
+            lblStatus.Text = "";
+        }
     }
 }
