@@ -79,6 +79,7 @@ namespace FurnitureSalesCompanyProject.Forms
 
         private void RegistrationForm_Load(object sender, EventArgs e)
         {
+
             lblValid.Text = "";
         }
     }
