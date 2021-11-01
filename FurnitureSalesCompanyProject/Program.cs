@@ -18,10 +18,16 @@ namespace FurnitureSalesCompanyProject
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           // AddStartingDate addStartingDate = new AddStartingDate();
-           // addStartingDate.Add();
-            Application.Run(new MainForm());
-            
+            // AddStartingDate addStartingDate = new AddStartingDate();
+            // addStartingDate.Add();
+            MainForm mainForm = new MainForm();
+            Application.Run(mainForm);
+            while (mainForm.DialogResult == DialogResult.Retry)
+            {
+                mainForm = new MainForm();
+                Application.Run(mainForm);
+            }
+
         }
     }
 }

@@ -11,10 +11,10 @@ namespace FurnitureSalesCompanyProject.Models
     public class Furniture
     {
         [Key]public int Id { get; set; }
-        [ForeignKey("Name")] [Required] public FurnitureName FurnitureName { get; set; }
         [Required] public string Model { get; set; }
         [Required] public string Specifications { get; set; }
         [Required] public double  Cost { get; set; }
+        [ForeignKey("Name")] [Required] public FurnitureName FurnitureName { get; set; }
         public List<Sale> Sales { get; set; }
     }
 }

@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace FurnitureSalesCompanyProject.StaticData
 {
-    public static class CurrentUser
+    public static class SaleStatic
     {
-        public static User User { get; set; }
-        public static bool isCustomer { get; set; }
+        public static List<Sale> Sales = new List<Sale>();
     }
-    
 }

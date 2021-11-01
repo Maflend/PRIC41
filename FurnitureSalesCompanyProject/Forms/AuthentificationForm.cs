@@ -18,6 +18,7 @@ namespace FurnitureSalesCompanyProject.Forms
         public AuthentificationForm()
         {
             InitializeComponent();
+           
         }
 
         private void btnLogIn_Click(object sender, EventArgs e)
@@ -26,15 +27,11 @@ namespace FurnitureSalesCompanyProject.Forms
             UserController userController = new UserController();
             if(userController.LogIn(user))
             {
-                MessageBox.Show("TRUE");
                 this.DialogResult = DialogResult.Yes;
-                
-                //lblLogin.Text = ((Customer)CurrentUser.User).Name;
             }
             else
             {
-                MessageBox.Show("FALSE");
-                
+                lblStatus.Text = "Вход не выполнен";
             }
         }
 
@@ -43,6 +40,13 @@ namespace FurnitureSalesCompanyProject.Forms
             RegistrationForm registrationForm = new RegistrationForm();
             registrationForm.ShowDialog();
 
+        }
+
+        private void AuthentificationForm_Load(object sender, EventArgs e)
+        {
+            tbLogin.Text = "Maria1";
+            tbPassword.Text = "Maria";
+            lblStatus.Text = "";
         }
     }
 }
