@@ -17,11 +17,11 @@ namespace FurnitureSalesCompanyProject.Forms
         private Button currentButton;
         public MainForm()
         {
-            StartApplication();
             InitializeComponent();
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
+            StartApplication();
             if (CurrentUser.isCustomer == true)
             {
                 btnOpenCustomersForm.Visible = false;
@@ -99,6 +99,12 @@ namespace FurnitureSalesCompanyProject.Forms
         {
             ActivateButton(sender);
             OpenChildForm(new CartForm(), sender);
+        }
+
+        private void btnOpenContractsHistoryForm_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            OpenChildForm(new ContractsHistoryForm(), sender);
         }
     }
 }

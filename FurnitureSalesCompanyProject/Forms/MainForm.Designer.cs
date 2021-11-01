@@ -66,9 +66,10 @@ namespace FurnitureSalesCompanyProject.Forms
             this.btnOpenContractsHistoryForm.Name = "btnOpenContractsHistoryForm";
             this.btnOpenContractsHistoryForm.Size = new System.Drawing.Size(145, 54);
             this.btnOpenContractsHistoryForm.TabIndex = 5;
-            this.btnOpenContractsHistoryForm.Text = "   История заказов";
+            this.btnOpenContractsHistoryForm.Text = "   Моя история";
             this.btnOpenContractsHistoryForm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOpenContractsHistoryForm.UseVisualStyleBackColor = false;
+            this.btnOpenContractsHistoryForm.Click += new System.EventHandler(this.btnOpenContractsHistoryForm_Click);
             // 
             // btnOpenContructsForm
             // 
@@ -166,6 +167,7 @@ namespace FurnitureSalesCompanyProject.Forms
             this.Controls.Add(this.panelMenuTab);
             this.MinimumSize = new System.Drawing.Size(861, 519);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Главное меню";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panelMenuTab.ResumeLayout(false);
