@@ -96,6 +96,7 @@ namespace FurnitureSalesCompanyProject.Forms
             this.comboBoxCategories.Name = "comboBoxCategories";
             this.comboBoxCategories.Size = new System.Drawing.Size(145, 23);
             this.comboBoxCategories.TabIndex = 4;
+            this.comboBoxCategories.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategories_SelectedIndexChanged);
             // 
             // tbSearch
             // 
@@ -103,6 +104,7 @@ namespace FurnitureSalesCompanyProject.Forms
             this.tbSearch.Name = "tbSearch";
             this.tbSearch.Size = new System.Drawing.Size(268, 23);
             this.tbSearch.TabIndex = 3;
+            this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
             // 
             // label2
             // 
@@ -135,7 +137,7 @@ namespace FurnitureSalesCompanyProject.Forms
             this.btnReset.TabIndex = 1;
             this.btnReset.Text = "Сбросить";
             this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnCreateProduct_Click);
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // FurnitureForm
             // 

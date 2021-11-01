@@ -17,6 +17,8 @@ namespace FurnitureSalesCompanyProject.Forms
     public partial class FurnitureForm : Form
     {
         FurnitureController furnitureController;
+        private List<FurnitureForDGVDto> furnituresForDGVDtoFromController;
+        private List<FurnitureForDGVDto> currentFurnituresForDGVDto;
         public FurnitureForm()
         {
             InitializeComponent();
@@ -25,14 +27,20 @@ namespace FurnitureSalesCompanyProject.Forms
             {
                 btnCreateProduct.Visible = false;
             }
-            
         }
-
         private void FurnitureForm_Load(object sender, EventArgs e)
         {
+            GetData();
             SetDataInDGV();
+            CurrentFurnituresForDGVDto_SetDefault();
+            var names = new FurnitureController().GetCategories().Select(f=> f.Name).ToList();
+            names.Insert(0, "");
+            comboBoxCategories.DataSource = names;
         }
-
+        private void CurrentFurnituresForDGVDto_SetDefault()
+        {
+            currentFurnituresForDGVDto = furnituresForDGVDtoFromController;
+        }
         private void btnCreateProduct_Click(object sender, EventArgs e)
         {
             CreateProductForm createProductForm = new CreateProductForm();
@@ -46,19 +54,65 @@ namespace FurnitureSalesCompanyProject.Forms
             FurnitureDetails furnitureDetails = new FurnitureDetails(id, name);
             furnitureDetails.ShowDialog();
             if (furnitureDetails.DialogResult == DialogResult.Yes)
+            {
+                GetData();
                 SetDataInDGV();
-
+            }
+        }
+        private void SetDataInDGV(List<FurnitureForDGVDto> furnitures)
+        {
+            dgvFurnitures.DataSource = furnitures;
+            DisplaySetting();
         }
         private void SetDataInDGV()
         {
+            dgvFurnitures.DataSource = furnituresForDGVDtoFromController;
+            DisplaySetting();
+        }
+        private void GetData()
+        {
             furnitureController = new FurnitureController();
-            var furnitures = furnitureController.GetAllFurnitureForDGVDto();
-            dgvFurnitures.DataSource = furnitures;
+            furnituresForDGVDtoFromController = furnitureController.GetAllFurnitureForDGVDto();
+        }
+        private void DisplaySetting()
+        {
             dgvFurnitures.Columns["Id"].Visible = false;
             dgvFurnitures.Columns["Name"].HeaderText = "Наименование";
             dgvFurnitures.Columns["Model"].HeaderText = "Модель";
             dgvFurnitures.Columns["Specifications"].HeaderText = "Характеристики";
             dgvFurnitures.Columns["Cost"].HeaderText = "Цена";
+        }
+        private void tbSearch_TextChanged(object sender, EventArgs e)
+        {
+            var furnitures = currentFurnituresForDGVDto.Where(f=>f.Model.StartsWith(tbSearch.Text)).ToList();
+            SetDataInDGV(furnitures);
+        }
+
+        private void comboBoxCategories_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tbSearch.Text = "";
+            int index = comboBoxCategories.SelectedIndex;
+            var item = comboBoxCategories.SelectedItem;
+            if (index == 0)
+            {
+                CurrentFurnituresForDGVDto_SetDefault();
+                SetDataInDGV();
+            }
+            else
+            {
+                var furnituresByName = furnituresForDGVDtoFromController.Where(f => f.Name == (string)item).ToList();
+                currentFurnituresForDGVDto = furnituresByName;
+                SetDataInDGV(currentFurnituresForDGVDto);
+            }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            tbSearch.Text = "";
+            comboBoxCategories.SelectedIndex = 0;
+            GetData();
+            CurrentFurnituresForDGVDto_SetDefault();
+            SetDataInDGV();
         }
     }
 

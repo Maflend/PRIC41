@@ -75,7 +75,7 @@ namespace FurnitureSalesCompanyProject.Forms
             {
                 if (previousBtn.GetType() == typeof(Button))
                 {
-                    previousBtn.BackColor = Color.FromArgb(111, 61, 81);
+                    previousBtn.BackColor = Color.FromArgb(111, 61, 71);
                     previousBtn.Font = new Font("Perpetua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
                 }
             }

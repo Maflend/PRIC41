@@ -44,5 +44,11 @@ namespace FurnitureSalesCompanyProject.Controllers
                .ToList();
             return furnitures;
         }
+        public List<FurnitureName> GetCategories()
+        {
+            db = new FurnitureContext();
+            var cat = db.FurnitureNames.Distinct().ToList();
+            return cat;
+        }
     }
 }
