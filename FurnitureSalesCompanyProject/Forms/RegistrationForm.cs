@@ -76,6 +76,11 @@ namespace FurnitureSalesCompanyProject.Forms
             myValidate.isSuccess = true;
             return myValidate;
         }
+
+        private void RegistrationForm_Load(object sender, EventArgs e)
+        {
+            lblValid.Text = "";
+        }
     }
     
 }
