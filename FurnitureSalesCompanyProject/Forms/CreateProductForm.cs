@@ -1,4 +1,5 @@
-﻿using FurnitureSalesCompanyProject.Models;
+﻿using FurnitureSalesCompanyProject.Controllers;
+using FurnitureSalesCompanyProject.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,7 @@ namespace FurnitureSalesCompanyProject.Forms
 {
     public partial class CreateProductForm : Form
     {
-        FurnitureContext db;
+        private string newCategory;
         public CreateProductForm()
         {
             InitializeComponent();
@@ -21,37 +22,75 @@ namespace FurnitureSalesCompanyProject.Forms
 
         private void CreateProductForm_Load(object sender, EventArgs e)
         {
-            db = new FurnitureContext();
-            var furnitureName = db.FurnitureNames.Select(n => n.Name).ToList();
-            
-            cbFurnitureName.DataSource = furnitureName;
-            cbFurnitureName.SelectedItem = "";
+            FurnitureController FurnitureController = new FurnitureController();
+            var contracts = FurnitureController.GetCategories();
+            var Category = contracts.Select(c => c.Name).ToList();
+            Category.Insert(0, "");
+
+            cbCategory.DataSource = Category;
+            cbCategory.SelectedItem = "";
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             CreateFurniture();
+            this.DialogResult = DialogResult.Yes;
         }
-        private void CreateFurniture()  
-            // Добавить отдельый текстбокс, и если пользователь хочет новую категорию моделей то пусть вписывает
+        private void CreateFurniture()
         {
-            Furniture furniture = new Furniture();
-            furniture.Model = tbName.Text;
-            furniture.Specifications = tbSpecifications.Text;
-            furniture.Cost = int.Parse(tbCost.Text);
-            
-
-            if (!db.FurnitureNames.Any(f=>f.Name == cbFurnitureName.SelectedItem.ToString()))
+           
+            FurnitureController furnitureController = new FurnitureController();
+            var currentFurniture = GetFurniture();
+            if (GetFurniture() !=null)
             {
-                FurnitureName furnitureName = new FurnitureName();
-                furnitureName.Name = cbFurnitureName.SelectedItem.ToString();
-                db.FurnitureNames.Add(furnitureName);
+                if (cbCategory.SelectedIndex == -1)
+                {
+                    Category Category = new Category();
+                    Category.Name = newCategory;
+                    var isDone = furnitureController.AddCategory(Category);
+                    if (!isDone)
+                    {
+                        MessageBox.Show("Не удалось добавить новую категорию.");
+                        this.Close();
+                    }
+                }
+                var category = furnitureController.GetCategoryByName(newCategory);
+                currentFurniture.Category = category;
+                furnitureController.AddFirniture(currentFurniture);
             }
-            var furName = db.FurnitureNames.FirstOrDefault(f => f.Name == cbFurnitureName.SelectedItem.ToString());
+                
+        }
+        private Furniture GetFurniture()
+        {
+            if (!string.IsNullOrWhiteSpace(tbName.Text) && !string.IsNullOrWhiteSpace(tbSpecifications.Text))
+            {
+                Furniture furniture = new Furniture();
+                furniture.Model = tbName.Text;
+                furniture.Specifications = tbSpecifications.Text;
+                if (int.TryParse(tbCost.Text, out int cost))
+                    furniture.Cost = cost;
+                return furniture;
+            }
+            else
+            {
+                MessageBox.Show("Неккоректно заполнены поля");
+                return null;
+            }
+            
+        }
+        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbCategory.SelectedIndex != 0)
+            {
+                cbCategory.DropDownStyle = ComboBoxStyle.DropDownList;
+            }
+            else
+                cbCategory.DropDownStyle = ComboBoxStyle.DropDown;
+        }
 
-            furniture.FurnitureName = furName;
-            db.Furnitures.Add(furniture);
-            db.SaveChanges();
+        private void cbCategory_TextChanged(object sender, EventArgs e)
+        {
+            newCategory = ((ComboBox)sender).Text;
         }
     }
 }

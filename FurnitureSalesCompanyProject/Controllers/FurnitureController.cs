@@ -38,17 +38,46 @@ namespace FurnitureSalesCompanyProject.Controllers
         }
         public List<FurnitureForDGVDto> GetAllFurnitureForDGVDto()
         {
-            var furnitures = db.FurnitureNames
-               .SelectMany(f => f.Furnituries, (furname, fur) => new { furname, fur })
-               .Select(f => new FurnitureForDGVDto(f.fur.Id, f.furname.Name, f.fur.Model, f.fur.Specifications, f.fur.Cost))
+            var furnitures = db.Categories
+               .SelectMany(f => f.Furnituries, (category, fur) => new { category, fur })
+               .Select(f => new FurnitureForDGVDto(f.fur.Id, f.category.Name, f.fur.Model, f.fur.Specifications, f.fur.Cost))
                .ToList();
             return furnitures;
         }
-        public List<FurnitureName> GetCategories()
+
+        public bool AddFirniture(Furniture furniture)
         {
             db = new FurnitureContext();
-            var cat = db.FurnitureNames.Distinct().ToList();
+            var category = db.Categories.FirstOrDefault(c => c.Name == furniture.Category.Name);           
+            furniture.Category = category;
+            db.Furnitures.Add(furniture);
+            db.SaveChanges();
+            return true;
+        }
+
+
+        public List<Category> GetCategories()
+        {
+            db = new FurnitureContext();
+            var cat = db.Categories.Distinct().ToList();
             return cat;
+        }
+        public bool AddCategory(Category category)
+        {
+            db = new FurnitureContext();
+            if (!db.Categories.Any(f => f.Name == category.Name))
+            {
+                db.Categories.Add(category);
+                db.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+        public Category GetCategoryByName(string name)
+        {
+            db = new FurnitureContext();
+            var category = db.Categories.FirstOrDefault(f => f.Name == name);
+            return category;
         }
     }
 }

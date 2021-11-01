@@ -15,11 +15,11 @@ namespace FurnitureSalesCompanyProject.Models
         public DbSet<Contract> Contracts { get; set; }
         public DbSet<Furniture> Furnitures { get; set; }
         public DbSet<Sale> Sales { get; set; }
-        public DbSet<FurnitureName> FurnitureNames { get; set; }
+        public DbSet<Category> Categories { get; set; }
         public FurnitureContext()
         {
-            //Database.EnsureDeleted();
-            //Database.EnsureCreated();
+           // Database.EnsureDeleted();
+           // Database.EnsureCreated();
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

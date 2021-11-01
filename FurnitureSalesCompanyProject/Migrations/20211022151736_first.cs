@@ -8,14 +8,14 @@ namespace FurnitureSalesCompanyProject.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "FurnitureNames",
+                name: "Categories",
                 columns: table => new
                 {
                     Name = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FurnitureNames", x => x.Name);
+                    table.PrimaryKey("PK_Categories", x => x.Name);
                 });
 
             migrationBuilder.CreateTable(
@@ -50,9 +50,9 @@ namespace FurnitureSalesCompanyProject.Migrations
                 {
                     table.PrimaryKey("PK_Furnitures", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Furnitures_FurnitureNames_Name",
+                        name: "FK_Furnitures_Categories_Name",
                         column: x => x.Name,
-                        principalTable: "FurnitureNames",
+                        principalTable: "Categories",
                         principalColumn: "Name",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -148,7 +148,7 @@ namespace FurnitureSalesCompanyProject.Migrations
                 name: "Users");
 
             migrationBuilder.DropTable(
-                name: "FurnitureNames");
+                name: "Categories");
         }
     }
 }

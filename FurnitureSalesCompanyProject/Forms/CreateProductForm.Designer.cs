@@ -37,7 +37,7 @@ namespace FurnitureSalesCompanyProject.Forms
             this.label3 = new System.Windows.Forms.Label();
             this.tbCost = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.cbFurnitureName = new System.Windows.Forms.ComboBox();
+            this.cbCategory = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -63,7 +63,7 @@ namespace FurnitureSalesCompanyProject.Forms
             // 
             this.tbName.Location = new System.Drawing.Point(138, 59);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(100, 23);
+            this.tbName.Size = new System.Drawing.Size(160, 23);
             this.tbName.TabIndex = 2;
             // 
             // label2
@@ -79,7 +79,7 @@ namespace FurnitureSalesCompanyProject.Forms
             // 
             this.tbSpecifications.Location = new System.Drawing.Point(138, 103);
             this.tbSpecifications.Name = "tbSpecifications";
-            this.tbSpecifications.Size = new System.Drawing.Size(100, 23);
+            this.tbSpecifications.Size = new System.Drawing.Size(160, 23);
             this.tbSpecifications.TabIndex = 2;
             // 
             // label3
@@ -95,7 +95,7 @@ namespace FurnitureSalesCompanyProject.Forms
             // 
             this.tbCost.Location = new System.Drawing.Point(138, 150);
             this.tbCost.Name = "tbCost";
-            this.tbCost.Size = new System.Drawing.Size(100, 23);
+            this.tbCost.Size = new System.Drawing.Size(160, 23);
             this.tbCost.TabIndex = 2;
             // 
             // label4
@@ -107,20 +107,22 @@ namespace FurnitureSalesCompanyProject.Forms
             this.label4.TabIndex = 1;
             this.label4.Text = "Цена";
             // 
-            // cbFurnitureName
+            // cbCategory
             // 
-            this.cbFurnitureName.FormattingEnabled = true;
-            this.cbFurnitureName.Location = new System.Drawing.Point(138, 12);
-            this.cbFurnitureName.Name = "cbFurnitureName";
-            this.cbFurnitureName.Size = new System.Drawing.Size(121, 23);
-            this.cbFurnitureName.TabIndex = 3;
+            this.cbCategory.FormattingEnabled = true;
+            this.cbCategory.Location = new System.Drawing.Point(138, 12);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(160, 23);
+            this.cbCategory.TabIndex = 3;
+            this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
+            this.cbCategory.TextChanged += new System.EventHandler(this.cbCategory_TextChanged);
             // 
             // CreateProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 270);
-            this.Controls.Add(this.cbFurnitureName);
+            this.Controls.Add(this.cbCategory);
             this.Controls.Add(this.tbCost);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -147,6 +149,6 @@ namespace FurnitureSalesCompanyProject.Forms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbCost;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cbFurnitureName;
+        private System.Windows.Forms.ComboBox cbCategory;
     }
 }

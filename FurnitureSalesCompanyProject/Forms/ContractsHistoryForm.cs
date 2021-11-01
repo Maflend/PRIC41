@@ -43,7 +43,7 @@ namespace FurnitureSalesCompanyProject.Forms
                 contract.RegistrationDate = Convert.ToDateTime(dgvContracts.Rows[e.RowIndex].Cells[1].Value.ToString());
                 contract.DateOfExecution = Convert.ToDateTime(dgvContracts.Rows[e.RowIndex].Cells[2].Value.ToString());
                 FurnitureContext db = new FurnitureContext();
-                var salesFurniture = db.Sales.Where(s => s.Contract.Number == contract.Number).Select(s => new {Name = s.Furniture.FurnitureName.Name, s.Furniture.Model, s.Furniture.Specifications, s.Furniture.Cost, s.Quantity }).ToList();
+                var salesFurniture = db.Sales.Where(s => s.Contract.Number == contract.Number).Select(s => new {Name = s.Furniture.Category.Name, s.Furniture.Model, s.Furniture.Specifications, s.Furniture.Cost, s.Quantity }).ToList();
                 if (salesFurniture != null)
                 {
 

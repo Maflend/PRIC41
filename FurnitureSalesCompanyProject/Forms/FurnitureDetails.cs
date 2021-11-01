@@ -25,7 +25,7 @@ namespace FurnitureSalesCompanyProject.Forms
             InitializeComponent();
             if(CurrentUser.isCustomer == true)
             {
-                tbFurnitureName.ReadOnly = true;
+                tbCategory.ReadOnly = true;
                 tbModel.ReadOnly = true;
                 tbSpecifications.ReadOnly = true;
                 tbCost.ReadOnly = true;
@@ -109,7 +109,7 @@ namespace FurnitureSalesCompanyProject.Forms
         {
             var furniture = controller.GetById(id);
             currentFurniture = furniture;
-            tbFurnitureName.Text = name;
+            tbCategory.Text = name;
             tbModel.Text = currentFurniture.Model;
             tbSpecifications.Text = currentFurniture.Specifications;
             tbCost.Text = currentFurniture.Cost.ToString();

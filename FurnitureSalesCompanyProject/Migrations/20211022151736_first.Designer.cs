@@ -74,14 +74,14 @@ namespace FurnitureSalesCompanyProject.Migrations
                     b.ToTable("Furnitures");
                 });
 
-            modelBuilder.Entity("FurnitureSalesCompanyProject.Models.FurnitureName", b =>
+            modelBuilder.Entity("FurnitureSalesCompanyProject.Models.Category", b =>
                 {
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Name");
 
-                    b.ToTable("FurnitureNames");
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("FurnitureSalesCompanyProject.Models.Sale", b =>
@@ -175,13 +175,13 @@ namespace FurnitureSalesCompanyProject.Migrations
 
             modelBuilder.Entity("FurnitureSalesCompanyProject.Models.Furniture", b =>
                 {
-                    b.HasOne("FurnitureSalesCompanyProject.Models.FurnitureName", "FurnitureName")
+                    b.HasOne("FurnitureSalesCompanyProject.Models.Category", "Category")
                         .WithMany("Furnituries")
                         .HasForeignKey("Name")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("FurnitureName");
+                    b.Navigation("Category");
                 });
 
             modelBuilder.Entity("FurnitureSalesCompanyProject.Models.Sale", b =>
@@ -213,7 +213,7 @@ namespace FurnitureSalesCompanyProject.Migrations
                     b.Navigation("Sales");
                 });
 
-            modelBuilder.Entity("FurnitureSalesCompanyProject.Models.FurnitureName", b =>
+            modelBuilder.Entity("FurnitureSalesCompanyProject.Models.Category", b =>
                 {
                     b.Navigation("Furnituries");
                 });

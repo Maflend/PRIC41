@@ -27,6 +27,11 @@ namespace FurnitureSalesCompanyProject.Forms
                 btnOpenCustomersForm.Visible = false;
                 btnOpenContructsForm.Visible = false;
             }
+            if (CurrentUser.isCustomer == false)
+            {
+                btnOpenCartForm.Visible = false;
+                btnOpenContractsHistoryForm.Visible = false;
+            }
             this.Text += $"\t ( {CurrentUser.User.Login} )";
         }
         private void btnCustomers_MouseHover(object sender, EventArgs e)

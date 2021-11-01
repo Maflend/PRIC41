@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FurnitureSalesCompanyProject.Models
 {
-    public class FurnitureName
+    public class Category
     {
         [Key]public string Name { get; set; }
         public List<Furniture> Furnituries { get; set; }

@@ -31,7 +31,7 @@ namespace FurnitureSalesCompanyProject.Forms
         {
             this.btnSave = new System.Windows.Forms.Button();
             this.btnBuy = new System.Windows.Forms.Button();
-            this.tbFurnitureName = new System.Windows.Forms.TextBox();
+            this.tbCategory = new System.Windows.Forms.TextBox();
             this.tbModel = new System.Windows.Forms.TextBox();
             this.tbSpecifications = new System.Windows.Forms.TextBox();
             this.tbCost = new System.Windows.Forms.TextBox();
@@ -61,12 +61,12 @@ namespace FurnitureSalesCompanyProject.Forms
             this.btnBuy.UseVisualStyleBackColor = true;
             this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
             // 
-            // tbFurnitureName
+            // tbCategory
             // 
-            this.tbFurnitureName.Location = new System.Drawing.Point(14, 12);
-            this.tbFurnitureName.Name = "tbFurnitureName";
-            this.tbFurnitureName.Size = new System.Drawing.Size(207, 23);
-            this.tbFurnitureName.TabIndex = 2;
+            this.tbCategory.Location = new System.Drawing.Point(14, 12);
+            this.tbCategory.Name = "tbCategory";
+            this.tbCategory.Size = new System.Drawing.Size(207, 23);
+            this.tbCategory.TabIndex = 2;
             // 
             // tbModel
             // 
@@ -134,7 +134,7 @@ namespace FurnitureSalesCompanyProject.Forms
             this.Controls.Add(this.tbCost);
             this.Controls.Add(this.tbSpecifications);
             this.Controls.Add(this.tbModel);
-            this.Controls.Add(this.tbFurnitureName);
+            this.Controls.Add(this.tbCategory);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnBuy);
             this.Controls.Add(this.btnSave);
@@ -152,7 +152,7 @@ namespace FurnitureSalesCompanyProject.Forms
         #endregion
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnBuy;
-        private System.Windows.Forms.TextBox tbFurnitureName;
+        private System.Windows.Forms.TextBox tbCategory;
         private System.Windows.Forms.TextBox tbModel;
         private System.Windows.Forms.TextBox tbSpecifications;
         private System.Windows.Forms.TextBox tbCost;

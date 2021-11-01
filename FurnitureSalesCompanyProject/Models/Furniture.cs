@@ -14,7 +14,7 @@ namespace FurnitureSalesCompanyProject.Models
         [Required] public string Model { get; set; }
         [Required] public string Specifications { get; set; }
         [Required] public double  Cost { get; set; }
-        [ForeignKey("Name")] [Required] public FurnitureName FurnitureName { get; set; }
+        [ForeignKey("Name")] [Required] public Category Category { get; set; }
         public List<Sale> Sales { get; set; }
     }
 }

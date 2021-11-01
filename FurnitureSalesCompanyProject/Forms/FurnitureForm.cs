@@ -45,9 +45,13 @@ namespace FurnitureSalesCompanyProject.Forms
         {
             CreateProductForm createProductForm = new CreateProductForm();
             createProductForm.ShowDialog();
+            if (createProductForm.DialogResult == DialogResult.Yes)
+            {
+                GetData();
+                SetDataInDGV();
+            }
         }
-
-        private void dgvFurnitures_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+            private void dgvFurnitures_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int id = int.Parse(dgvFurnitures.Rows[e.RowIndex].Cells[0].Value.ToString());
             string name = dgvFurnitures.Rows[e.RowIndex].Cells[1].Value.ToString();
