@@ -28,14 +28,10 @@ namespace FurnitureSalesCompanyProject.Controllers
             }
             return false;
         }
-        //public List<Contract> GetAll()
-        //{
-        //    //var order = db.Orders.Where(o => o.User.Login == CurrentUserStatic.Login).SelectMany(o => o.Sales, (o, s) => new { o, s }).Select(os => os).ToList();
-        //    var order = db.Contracts.Where(o => o.Customer.Login == CurrentUser.User.Login).Select(o => o).ToList();
-        //    if (order != null)
-        //        return order;
-        //    return null;
-
-        //}
+        public List<Contract> GetAll()
+        {
+            var contracts = db.Contracts.Where(o => o.Customer.Login == CurrentUser.User.Login).Select(o => o).ToList();    
+            return contracts;
+        }
     }
 }
