@@ -35,10 +35,10 @@ namespace FurnitureSalesCompanyProject
             Stuff stuff1 = new Stuff() {Login = "Stuff", Password = "Stuff" };
             db.AddRange(stuff1);
 
-            Contract contract1 = new Contract() 
-            { RegistrationDate = new DateTime(2021,8,13), DateOfExecution= new DateTime(2021, 9, 29), Sales = new List<Sale>() {sale1,sale2 }, Customer = customer1 };
+            Contract contract1 = new Contract()
+            { IsApproved = true, RegistrationDate = new DateTime(2021,8,13), DateOfExecution= new DateTime(2021, 9, 29), Sales = new List<Sale>() {sale1,sale2 }, Customer = customer1 };
             Contract contract2 = new Contract() 
-            { RegistrationDate = new DateTime(2021, 9, 20), DateOfExecution = new DateTime(2021, 9, 28), Sales = new List<Sale>() { sale3 }, Customer = customer2 };
+            { IsApproved = true, RegistrationDate = new DateTime(2021, 9, 20), DateOfExecution = new DateTime(2021, 9, 28), Sales = new List<Sale>() { sale3 }, Customer = customer2 };
             db.AddRange(contract1,contract2);
 
             db.SaveChanges();

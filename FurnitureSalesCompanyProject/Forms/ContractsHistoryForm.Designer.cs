@@ -31,6 +31,7 @@ namespace FurnitureSalesCompanyProject.Forms
         {
             this.dgvContracts = new System.Windows.Forms.DataGridView();
             this.dgvSales = new System.Windows.Forms.DataGridView();
+            this.cbIsApproved = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContracts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSales)).BeginInit();
             this.SuspendLayout();
@@ -43,10 +44,11 @@ namespace FurnitureSalesCompanyProject.Forms
             this.dgvContracts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvContracts.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvContracts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvContracts.Location = new System.Drawing.Point(0, 0);
+            this.dgvContracts.Location = new System.Drawing.Point(0, 23);
             this.dgvContracts.Name = "dgvContracts";
+            this.dgvContracts.ReadOnly = true;
             this.dgvContracts.RowTemplate.Height = 25;
-            this.dgvContracts.Size = new System.Drawing.Size(684, 221);
+            this.dgvContracts.Size = new System.Drawing.Size(684, 198);
             this.dgvContracts.TabIndex = 0;
             this.dgvContracts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvContracts_CellClick);
             // 
@@ -60,14 +62,27 @@ namespace FurnitureSalesCompanyProject.Forms
             this.dgvSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSales.Location = new System.Drawing.Point(0, 221);
             this.dgvSales.Name = "dgvSales";
+            this.dgvSales.ReadOnly = true;
             this.dgvSales.Size = new System.Drawing.Size(684, 194);
             this.dgvSales.TabIndex = 0;
+            // 
+            // cbIsApproved
+            // 
+            this.cbIsApproved.AutoSize = true;
+            this.cbIsApproved.Location = new System.Drawing.Point(12, 3);
+            this.cbIsApproved.Name = "cbIsApproved";
+            this.cbIsApproved.Size = new System.Drawing.Size(148, 19);
+            this.cbIsApproved.TabIndex = 1;
+            this.cbIsApproved.Text = "Показать одобренные";
+            this.cbIsApproved.UseVisualStyleBackColor = true;
+            this.cbIsApproved.CheckedChanged += new System.EventHandler(this.cbIsApproved_CheckedChanged);
             // 
             // ContractsHistoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 441);
+            this.Controls.Add(this.cbIsApproved);
             this.Controls.Add(this.dgvSales);
             this.Controls.Add(this.dgvContracts);
             this.Name = "ContractsHistoryForm";
@@ -76,6 +91,7 @@ namespace FurnitureSalesCompanyProject.Forms
             ((System.ComponentModel.ISupportInitialize)(this.dgvContracts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSales)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -83,5 +99,6 @@ namespace FurnitureSalesCompanyProject.Forms
 
         private System.Windows.Forms.DataGridView dgvContracts;
         private System.Windows.Forms.DataGridView dgvSales;
+        private System.Windows.Forms.CheckBox cbIsApproved;
     }
 }

@@ -32,8 +32,9 @@ namespace FurnitureSalesCompanyProject.Forms
                 if (MessageBox.Show("Подтвердите покупку", "Подтверждение", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     Contract contract = new Contract();
+                    contract.RegistrationDate = DateTime.Now;
                     ContractController controller = new ContractController();
-                    if (controller.Post(contract))
+                    if (controller.Post(contract, SaleStatic.Sales))
                     {
                         SaleStatic.Sales = new List<Sale>();
                         MessageBox.Show("Продукт куплен");

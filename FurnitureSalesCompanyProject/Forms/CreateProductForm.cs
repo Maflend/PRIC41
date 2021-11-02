@@ -41,7 +41,7 @@ namespace FurnitureSalesCompanyProject.Forms
            
             FurnitureController furnitureController = new FurnitureController();
             var currentFurniture = GetFurniture();
-            if (GetFurniture() !=null)
+            if (currentFurniture != null)
             {
                 if (cbCategory.SelectedIndex == -1)
                 {
@@ -68,8 +68,15 @@ namespace FurnitureSalesCompanyProject.Forms
                 furniture.Model = tbName.Text;
                 furniture.Specifications = tbSpecifications.Text;
                 if (int.TryParse(tbCost.Text, out int cost))
+                {
                     furniture.Cost = cost;
-                return furniture;
+                    return furniture;
+                }
+                else
+                {
+                    MessageBox.Show("Неккоректно заполнены поля");
+                    return null;
+                }
             }
             else
             {

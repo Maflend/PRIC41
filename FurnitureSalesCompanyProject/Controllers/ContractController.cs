@@ -11,18 +11,15 @@ namespace FurnitureSalesCompanyProject.Controllers
     public class ContractController
     {
         FurnitureContext db = new FurnitureContext();
-        public bool Post(Contract contract)
+        public bool Post(Contract contract, List<Sale> sales)
         {
             var user = ContextStatic.FurnitureContext.Users.FirstOrDefault(i => i.Login == CurrentUser.User.Login);
-            var sale = SaleStatic.Sales.Select(l => l);
             if (user != null)
             {
-                Contract con = new Contract();
-                con.Sales = SaleStatic.Sales;
-                con.Customer = (Customer)user;
-                con.RegistrationDate = DateTime.Now;
-                con.DateOfExecution = con.RegistrationDate.AddDays(7);
-                ContextStatic.FurnitureContext.Contracts.Add(con);
+                contract.Customer = (Customer)user;
+                contract.Sales = sales;
+                
+                ContextStatic.FurnitureContext.Contracts.Add(contract);
                 ContextStatic.FurnitureContext.SaveChanges();
                 return true;
             }

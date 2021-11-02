@@ -10,8 +10,9 @@ namespace FurnitureSalesCompanyProject.Models
     public class Contract
     {
         [Key]public int Number { get; set; }
+        public bool IsApproved { get; set; } = false;
         [Required] public DateTime RegistrationDate { get; set; }
-        [Required] public DateTime DateOfExecution { get; set; }
+        public DateTime DateOfExecution { get; set; }
         [Required] public Customer Customer { get; set; }
         [Required]public List<Sale> Sales { get; set; }
 
