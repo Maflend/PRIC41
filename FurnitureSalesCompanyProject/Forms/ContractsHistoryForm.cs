@@ -24,19 +24,23 @@ namespace FurnitureSalesCompanyProject.Forms
 
         private void ContractsHistoryForm_Load(object sender, EventArgs e)
         {
-            currentContracts = new List<Contract>();
-            currentContracts = GetContractsFromController();
+            GetContractsFromController();
             SetData_dgvContracts();
+            SetData_dgvSales();
+            SetData_dgvContracts();
+            Settings_dgvSales();
+            Settings_dgvContracts();
         }
         private void cbIsApproved_CheckedChanged(object sender, EventArgs e)
         {
             SetData_dgvContracts();
+            currentSalesDto = new List<SaleWithFurnitureForDGVDto>();
+            SetData_dgvSales();
         }
-        private List<Contract> GetContractsFromController()
+        private void GetContractsFromController()
         {
             ContractController controller = new ContractController();
-            var contracts = controller.GetAll();
-            return contracts;
+            currentContracts = controller.GetAll();
         }
         private void SetData_dgvContracts()
         {
@@ -57,7 +61,7 @@ namespace FurnitureSalesCompanyProject.Forms
             {
                 dgvContracts.DataSource = contractsIsApprovedTrue;
             }
-            Settings_dgvContracts();
+           // Settings_dgvContracts();
         }
         private void Settings_dgvContracts()
         {
@@ -78,6 +82,8 @@ namespace FurnitureSalesCompanyProject.Forms
             {
                 dgvSales.DataSource = currentSalesDto;
             }
+            else
+                dgvSales.DataSource = new List<SaleWithFurnitureForDGVDto>();
         }
         private void Settings_dgvSales()
         {
@@ -95,11 +101,16 @@ namespace FurnitureSalesCompanyProject.Forms
                 var number = (int)dgvContracts.Rows[e.RowIndex].Cells[0].Value;
                 GetSalesFromController(number);
                 SetData_dgvSales();
-                Settings_dgvSales();
+               
             }
 
         }
 
+        private void btnUpdateData_Click(object sender, EventArgs e)
+        {
+            GetContractsFromController();
+            SetData_dgvContracts();
+        }
     }
 
     

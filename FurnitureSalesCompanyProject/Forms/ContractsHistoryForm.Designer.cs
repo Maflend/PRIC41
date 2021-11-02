@@ -32,6 +32,7 @@ namespace FurnitureSalesCompanyProject.Forms
             this.dgvContracts = new System.Windows.Forms.DataGridView();
             this.dgvSales = new System.Windows.Forms.DataGridView();
             this.cbIsApproved = new System.Windows.Forms.CheckBox();
+            this.btnUpdateData = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContracts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSales)).BeginInit();
             this.SuspendLayout();
@@ -77,11 +78,25 @@ namespace FurnitureSalesCompanyProject.Forms
             this.cbIsApproved.UseVisualStyleBackColor = true;
             this.cbIsApproved.CheckedChanged += new System.EventHandler(this.cbIsApproved_CheckedChanged);
             // 
+            // btnUpdateData
+            // 
+            this.btnUpdateData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(61)))), ((int)(((byte)(71)))));
+            this.btnUpdateData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdateData.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnUpdateData.Location = new System.Drawing.Point(517, 0);
+            this.btnUpdateData.Name = "btnUpdateData";
+            this.btnUpdateData.Size = new System.Drawing.Size(167, 23);
+            this.btnUpdateData.TabIndex = 2;
+            this.btnUpdateData.Text = "Обновить данные";
+            this.btnUpdateData.UseVisualStyleBackColor = false;
+            this.btnUpdateData.Click += new System.EventHandler(this.btnUpdateData_Click);
+            // 
             // ContractsHistoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 441);
+            this.Controls.Add(this.btnUpdateData);
             this.Controls.Add(this.cbIsApproved);
             this.Controls.Add(this.dgvSales);
             this.Controls.Add(this.dgvContracts);
@@ -100,5 +115,6 @@ namespace FurnitureSalesCompanyProject.Forms
         private System.Windows.Forms.DataGridView dgvContracts;
         private System.Windows.Forms.DataGridView dgvSales;
         private System.Windows.Forms.CheckBox cbIsApproved;
+        private System.Windows.Forms.Button btnUpdateData;
     }
 }
