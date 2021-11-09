@@ -33,7 +33,11 @@ namespace FurnitureSalesCompanyProject.Forms
             GetData();
             SetDataInDGV();
             CurrentFurnituresForDGVDto_SetDefault();
-            var names = new FurnitureController().GetCategories().Select(f=> f.Name).ToList();
+            SetDataInComboBox();
+        }
+        private void SetDataInComboBox()
+        {
+            var names = new FurnitureController().GetCategories().Select(f => f.Name).ToList();
             names.Insert(0, "");
             comboBoxCategories.DataSource = names;
         }
@@ -51,7 +55,7 @@ namespace FurnitureSalesCompanyProject.Forms
                 SetDataInDGV();
             }
         }
-            private void dgvFurnitures_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvFurnitures_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int id = int.Parse(dgvFurnitures.Rows[e.RowIndex].Cells[0].Value.ToString());
             string name = dgvFurnitures.Rows[e.RowIndex].Cells[1].Value.ToString();
@@ -61,6 +65,7 @@ namespace FurnitureSalesCompanyProject.Forms
             {
                 GetData();
                 SetDataInDGV();
+                SetDataInComboBox();
             }
         }
         private void SetDataInDGV(List<FurnitureForDGVDto> furnitures)

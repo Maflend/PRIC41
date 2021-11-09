@@ -39,26 +39,33 @@ namespace FurnitureSalesCompanyProject.Forms
             this.lblQuantity = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.lblAnswer = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSave
             // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(61)))), ((int)(((byte)(71)))));
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.ForeColor = System.Drawing.SystemColors.Control;
             this.btnSave.Location = new System.Drawing.Point(126, 223);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(106, 32);
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "Сохранить";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnBuy
             // 
+            this.btnBuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(61)))), ((int)(((byte)(71)))));
+            this.btnBuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuy.ForeColor = System.Drawing.SystemColors.Control;
             this.btnBuy.Location = new System.Drawing.Point(126, 261);
             this.btnBuy.Name = "btnBuy";
             this.btnBuy.Size = new System.Drawing.Size(106, 32);
             this.btnBuy.TabIndex = 1;
             this.btnBuy.Text = "Купить";
-            this.btnBuy.UseVisualStyleBackColor = true;
+            this.btnBuy.UseVisualStyleBackColor = false;
             this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
             // 
             // tbCategory
@@ -107,12 +114,15 @@ namespace FurnitureSalesCompanyProject.Forms
             // 
             // btnCancel
             // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(61)))), ((int)(((byte)(71)))));
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.Control;
             this.btnCancel.Location = new System.Drawing.Point(12, 223);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(106, 32);
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Отмена";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // lblAnswer
@@ -124,6 +134,19 @@ namespace FurnitureSalesCompanyProject.Forms
             this.lblAnswer.Size = new System.Drawing.Size(58, 19);
             this.lblAnswer.TabIndex = 0;
             this.lblAnswer.Text = "Answer";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(61)))), ((int)(((byte)(71)))));
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnDelete.Location = new System.Drawing.Point(12, 185);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(106, 32);
+            this.btnDelete.TabIndex = 1;
+            this.btnDelete.Text = "Удалить";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // FurnitureDetails
             // 
@@ -137,6 +160,7 @@ namespace FurnitureSalesCompanyProject.Forms
             this.Controls.Add(this.tbCategory);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnBuy);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblAnswer);
             this.Controls.Add(this.lblQuantity);
@@ -160,5 +184,6 @@ namespace FurnitureSalesCompanyProject.Forms
         private System.Windows.Forms.Label lblQuantity;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label lblAnswer;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

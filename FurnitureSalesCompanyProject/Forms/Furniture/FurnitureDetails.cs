@@ -38,8 +38,10 @@ namespace FurnitureSalesCompanyProject.Forms
             }
             else
             {
+                tbCategory.ReadOnly = true; // И так сойдет.
+                tbQuantity.Visible = false;
+                lblQuantity.Visible = false;
                 btnBuy.Visible = false;
-
                 windowsSize = new Size(259, 296);
                 this.MaximumSize = windowsSize;
                 this.MinimumSize = windowsSize;
@@ -128,6 +130,21 @@ namespace FurnitureSalesCompanyProject.Forms
                 furniture.Specifications = tbSpecifications.Text;
             }
             return furniture;
+        }
+
+        private async void btnDelete_Click(object sender, EventArgs e)
+        {
+            FurnitureController furnitureController = new FurnitureController();
+            if(furnitureController.Delete(currentFurniture.Id))
+            {
+                lblAnswer.Text = "Удаление: успешно.";
+                await Task.Delay(1500);
+                this.DialogResult = DialogResult.Yes;
+            }
+            else
+            {
+                lblAnswer.Text = "Удаление: не успешно.";
+            }
         }
     }
 }

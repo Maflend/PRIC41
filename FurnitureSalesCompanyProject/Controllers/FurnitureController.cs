@@ -21,21 +21,6 @@ namespace FurnitureSalesCompanyProject.Controllers
             var furniture = db.Furnitures.FirstOrDefault(f => f.Id == id);
             return furniture;
         }
-        public bool Update(Furniture newFurniture)
-        {
-            db = new FurnitureContext();
-            var furniture = db.Furnitures.FirstOrDefault(f => f.Id == newFurniture.Id);
-            if(furniture != null)
-            {
-                furniture.Model = newFurniture.Model;
-                furniture.Sales = newFurniture.Sales;
-                furniture.Specifications = newFurniture.Specifications;
-                furniture.Cost = newFurniture.Cost;
-                db.SaveChanges();
-                return true;
-            }
-            return false;
-        }
         public List<FurnitureForDGVDto> GetAllFurnitureForDGVDto()
         {
             var furnitures = db.Categories
@@ -54,6 +39,44 @@ namespace FurnitureSalesCompanyProject.Controllers
             db.SaveChanges();
             return true;
         }
+        public bool Update(Furniture newFurniture)
+        {
+            db = new FurnitureContext();
+            var furniture = db.Furnitures.FirstOrDefault(f => f.Id == newFurniture.Id);
+            if(furniture != null)
+            {
+                furniture.Model = newFurniture.Model;
+                furniture.Sales = newFurniture.Sales;
+                furniture.Specifications = newFurniture.Specifications;
+                furniture.Cost = newFurniture.Cost;
+                db.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+        public bool Delete(int id)
+        {
+            db = new FurnitureContext();
+            var furniture = db.Furnitures.FirstOrDefault(f => f.Id == id);
+            if(furniture !=null)
+            {
+                db.Remove(furniture);
+                db.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+
+
+
+
+
+
+
+
+
+
+
 
 
         public List<Category> GetCategories()
@@ -79,5 +102,6 @@ namespace FurnitureSalesCompanyProject.Controllers
             var category = db.Categories.FirstOrDefault(f => f.Name == name);
             return category;
         }
+
     }
 }
