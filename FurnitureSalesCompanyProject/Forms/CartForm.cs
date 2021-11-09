@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace FurnitureSalesCompanyProject.Forms
 {
     public partial class CartForm : Form
@@ -57,8 +58,9 @@ namespace FurnitureSalesCompanyProject.Forms
             if (SaleStatic.Sales != null)
             {
                 var sale = SaleStatic.Sales.Select(s => new
-                { Name = s.Furniture.Category.Name, Model = s.Furniture.Model, Description = s.Furniture.Specifications, Quantity = s.Quantity, Price = s.Furniture.Cost}).ToList();
+                {Id = s.Id, Name = s.Furniture.Category.Name, Model = s.Furniture.Model, Description = s.Furniture.Specifications, Quantity = s.Quantity, Price = s.Furniture.Cost}).ToList();
                 dgvCart.DataSource = sale;
+                dgvCart.Columns["Id"].Visible = false;
                 dgvCart.Columns["Name"].HeaderText = "Наименование";
                 dgvCart.Columns["Description"].HeaderText = "Описание";
                 dgvCart.Columns["Quantity"].HeaderText = "Количество";
@@ -77,6 +79,22 @@ namespace FurnitureSalesCompanyProject.Forms
                 lblTotalCost.Text = "0";
             }
         }
-       
+        private int id;
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var item = SaleStatic.Sales[id];
+            SaleStatic.Sales.Remove(item);
+            SetData();
+            Click_btnResetCart.Invoke(SaleStatic.Sales.Count());
+        }
+
+        private void dgvCart_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right && e.RowIndex>-1)
+            {
+                id = dgvCart.Rows[e.RowIndex].Index;
+                contextMenuStrip1.Show(Cursor.Position.X, Cursor.Position.Y);
+            }
+        }
     }
 }
