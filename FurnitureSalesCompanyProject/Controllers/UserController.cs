@@ -20,10 +20,12 @@ namespace FurnitureSalesCompanyProject.Controllers
                 if(currentUser !=null)
                 {
                     CurrentUser.User = currentUser;
-                    if (CurrentUser.User is Stuff)
+                    if (CurrentUser.User is Employee)
                         CurrentUser.isCustomer = false;
                     if (CurrentUser.User is Customer)
                         CurrentUser.isCustomer = true;
+                    if (CurrentUser.User is Admin)
+                        CurrentUser.isAdmin = true;
                 }
                 return true;
             }
@@ -31,13 +33,13 @@ namespace FurnitureSalesCompanyProject.Controllers
         }
         public User GetUserData(string login)
         {
-            Customer customer = db.Customers.FirstOrDefault(u => u.Login == login);
-            Stuff stuff = db.Stuffs.FirstOrDefault(u => u.Login == login);
-            if (customer != null)
-                return customer;
-            if (stuff != null)
-                return stuff;
-            return new User();
+            var user = db.Users.FirstOrDefault(u => u.Login == login);
+            return user;
+        }
+        public List<Customer> GetAllCustomers()
+        {
+            var customers = db.Customers.ToList();
+            return customers;
         }
         public bool SignIn(Customer customer)
         {

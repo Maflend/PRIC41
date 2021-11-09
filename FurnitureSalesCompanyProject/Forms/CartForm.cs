@@ -32,7 +32,7 @@ namespace FurnitureSalesCompanyProject.Forms
                 if (MessageBox.Show("Подтвердите покупку", "Подтверждение", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     Contract contract = new Contract();
-                    contract.RegistrationDate = DateTime.Now;
+                    contract.RegistrationDate = DateTime.Now.Date;
                     ContractController controller = new ContractController();
                     if (controller.Post(contract, SaleStatic.Sales))
                     {
@@ -54,7 +54,7 @@ namespace FurnitureSalesCompanyProject.Forms
             if (SaleStatic.Sales != null)
             {
                 var sale = SaleStatic.Sales.Select(s => new
-                { Name = s.Furniture, Model = s.Furniture.Model, Description = s.Furniture.Specifications, Quantity = s.Quantity, Price = s.Furniture.Cost}).ToList();
+                { Name = s.Furniture.Category.Name, Model = s.Furniture.Model, Description = s.Furniture.Specifications, Quantity = s.Quantity, Price = s.Furniture.Cost}).ToList();
                 dgvCart.DataSource = sale;
                 dgvCart.Columns["Name"].HeaderText = "Наименование";
                 dgvCart.Columns["Description"].HeaderText = "Описание";

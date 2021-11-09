@@ -11,6 +11,7 @@ namespace FurnitureSalesCompanyProject.StaticData
     {
         public static User User { get; set; }
         public static bool isCustomer { get; set; }
+        public static bool isAdmin { get; set; } = false;
     }
     
 }

@@ -40,23 +40,29 @@ namespace FurnitureSalesCompanyProject.Forms
             // btnResetCart
             // 
             this.btnResetCart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnResetCart.Location = new System.Drawing.Point(429, 402);
+            this.btnResetCart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(61)))), ((int)(((byte)(71)))));
+            this.btnResetCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResetCart.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnResetCart.Location = new System.Drawing.Point(425, 397);
             this.btnResetCart.Name = "btnResetCart";
-            this.btnResetCart.Size = new System.Drawing.Size(124, 23);
+            this.btnResetCart.Size = new System.Drawing.Size(126, 42);
             this.btnResetCart.TabIndex = 0;
             this.btnResetCart.Text = "Отмена заказа";
-            this.btnResetCart.UseVisualStyleBackColor = true;
+            this.btnResetCart.UseVisualStyleBackColor = false;
             this.btnResetCart.Click += new System.EventHandler(this.btnResetCart_Click);
             // 
             // btnPay
             // 
             this.btnPay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPay.Location = new System.Drawing.Point(585, 402);
+            this.btnPay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(61)))), ((int)(((byte)(71)))));
+            this.btnPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPay.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnPay.Location = new System.Drawing.Point(557, 397);
             this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(87, 23);
+            this.btnPay.Size = new System.Drawing.Size(126, 42);
             this.btnPay.TabIndex = 0;
             this.btnPay.Text = "Оплатить";
-            this.btnPay.UseVisualStyleBackColor = true;
+            this.btnPay.UseVisualStyleBackColor = false;
             this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // dgvCart
@@ -76,9 +82,10 @@ namespace FurnitureSalesCompanyProject.Forms
             // 
             this.lblTotalCost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblTotalCost.AutoSize = true;
-            this.lblTotalCost.Location = new System.Drawing.Point(105, 406);
+            this.lblTotalCost.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTotalCost.Location = new System.Drawing.Point(125, 406);
             this.lblTotalCost.Name = "lblTotalCost";
-            this.lblTotalCost.Size = new System.Drawing.Size(59, 15);
+            this.lblTotalCost.Size = new System.Drawing.Size(77, 21);
             this.lblTotalCost.TabIndex = 2;
             this.lblTotalCost.Text = "Total Cost";
             // 
@@ -86,9 +93,10 @@ namespace FurnitureSalesCompanyProject.Forms
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(12, 406);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 15);
+            this.label1.Size = new System.Drawing.Size(117, 21);
             this.label1.TabIndex = 2;
             this.label1.Text = "Итого сумма :  ";
             // 
@@ -103,7 +111,7 @@ namespace FurnitureSalesCompanyProject.Forms
             this.Controls.Add(this.btnPay);
             this.Controls.Add(this.btnResetCart);
             this.Name = "CartForm";
-            this.Text = "CartForm";
+            this.Text = "Корзина";
             this.Load += new System.EventHandler(this.CartForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).EndInit();
             this.ResumeLayout(false);

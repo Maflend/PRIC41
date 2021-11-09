@@ -30,8 +30,8 @@ namespace FurnitureSalesCompanyProject.Forms
         private void InitializeComponent()
         {
             this.panelMenuTab = new System.Windows.Forms.Panel();
-            this.btnOpenContractsHistoryForm = new System.Windows.Forms.Button();
             this.btnOpenContructsForm = new System.Windows.Forms.Button();
+            this.btnOpenContractsHistoryForm = new System.Windows.Forms.Button();
             this.btnOpenCartForm = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnOpenFurnituresForm = new System.Windows.Forms.Button();
@@ -43,8 +43,8 @@ namespace FurnitureSalesCompanyProject.Forms
             // panelMenuTab
             // 
             this.panelMenuTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(61)))), ((int)(((byte)(71)))));
-            this.panelMenuTab.Controls.Add(this.btnOpenContractsHistoryForm);
             this.panelMenuTab.Controls.Add(this.btnOpenContructsForm);
+            this.panelMenuTab.Controls.Add(this.btnOpenContractsHistoryForm);
             this.panelMenuTab.Controls.Add(this.btnOpenCartForm);
             this.panelMenuTab.Controls.Add(this.btnLogout);
             this.panelMenuTab.Controls.Add(this.btnOpenFurnituresForm);
@@ -55,22 +55,6 @@ namespace FurnitureSalesCompanyProject.Forms
             this.panelMenuTab.Size = new System.Drawing.Size(145, 480);
             this.panelMenuTab.TabIndex = 0;
             // 
-            // btnOpenContractsHistoryForm
-            // 
-            this.btnOpenContractsHistoryForm.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnOpenContractsHistoryForm.FlatAppearance.BorderSize = 0;
-            this.btnOpenContractsHistoryForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOpenContractsHistoryForm.Font = new System.Drawing.Font("Perpetua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnOpenContractsHistoryForm.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnOpenContractsHistoryForm.Location = new System.Drawing.Point(0, 216);
-            this.btnOpenContractsHistoryForm.Name = "btnOpenContractsHistoryForm";
-            this.btnOpenContractsHistoryForm.Size = new System.Drawing.Size(145, 54);
-            this.btnOpenContractsHistoryForm.TabIndex = 5;
-            this.btnOpenContractsHistoryForm.Text = "   Моя история";
-            this.btnOpenContractsHistoryForm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOpenContractsHistoryForm.UseVisualStyleBackColor = false;
-            this.btnOpenContractsHistoryForm.Click += new System.EventHandler(this.btnOpenContractsHistoryForm_Click);
-            // 
             // btnOpenContructsForm
             // 
             this.btnOpenContructsForm.Dock = System.Windows.Forms.DockStyle.Top;
@@ -78,13 +62,30 @@ namespace FurnitureSalesCompanyProject.Forms
             this.btnOpenContructsForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOpenContructsForm.Font = new System.Drawing.Font("Perpetua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnOpenContructsForm.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnOpenContructsForm.Location = new System.Drawing.Point(0, 162);
+            this.btnOpenContructsForm.Location = new System.Drawing.Point(0, 216);
             this.btnOpenContructsForm.Name = "btnOpenContructsForm";
             this.btnOpenContructsForm.Size = new System.Drawing.Size(145, 54);
             this.btnOpenContructsForm.TabIndex = 4;
             this.btnOpenContructsForm.Text = "   Контракты";
             this.btnOpenContructsForm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOpenContructsForm.UseVisualStyleBackColor = false;
+            this.btnOpenContructsForm.Click += new System.EventHandler(this.btnOpenContructsForm_Click);
+            // 
+            // btnOpenContractsHistoryForm
+            // 
+            this.btnOpenContractsHistoryForm.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnOpenContractsHistoryForm.FlatAppearance.BorderSize = 0;
+            this.btnOpenContractsHistoryForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpenContractsHistoryForm.Font = new System.Drawing.Font("Perpetua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnOpenContractsHistoryForm.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnOpenContractsHistoryForm.Location = new System.Drawing.Point(0, 162);
+            this.btnOpenContractsHistoryForm.Name = "btnOpenContractsHistoryForm";
+            this.btnOpenContractsHistoryForm.Size = new System.Drawing.Size(145, 54);
+            this.btnOpenContractsHistoryForm.TabIndex = 5;
+            this.btnOpenContractsHistoryForm.Text = "   Моя история";
+            this.btnOpenContractsHistoryForm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOpenContractsHistoryForm.UseVisualStyleBackColor = false;
+            this.btnOpenContractsHistoryForm.Click += new System.EventHandler(this.btnOpenContractsHistoryForm_Click);
             // 
             // btnOpenCartForm
             // 

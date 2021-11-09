@@ -44,8 +44,8 @@ namespace FurnitureSalesCompanyProject.Forms
 
         private void AuthentificationForm_Load(object sender, EventArgs e)
         {
-            tbLogin.Text = "Stuff";
-            tbPassword.Text = "Stuff";
+            tbLogin.Text = "Employee";
+            tbPassword.Text = "Employee";
             lblStatus.Text = "";
         }
     }

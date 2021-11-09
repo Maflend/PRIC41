@@ -155,11 +155,11 @@ namespace FurnitureSalesCompanyProject.Migrations
                     b.HasDiscriminator().HasValue("Customer");
                 });
 
-            modelBuilder.Entity("FurnitureSalesCompanyProject.Models.Stuff", b =>
+            modelBuilder.Entity("FurnitureSalesCompanyProject.Models.Employee", b =>
                 {
                     b.HasBaseType("FurnitureSalesCompanyProject.Models.User");
 
-                    b.HasDiscriminator().HasValue("Stuff");
+                    b.HasDiscriminator().HasValue("Employee");
                 });
 
             modelBuilder.Entity("FurnitureSalesCompanyProject.Models.Contract", b =>

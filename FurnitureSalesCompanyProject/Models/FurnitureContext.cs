@@ -10,8 +10,9 @@ namespace FurnitureSalesCompanyProject.Models
     public class FurnitureContext : DbContext
     {
         public DbSet<User> Users { get; set; }
-        public DbSet<Stuff> Stuffs { get; set; }
+        public DbSet<Employee> Employees { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Admin> Admins { get; set; }
         public DbSet<Contract> Contracts { get; set; }
         public DbSet<Furniture> Furnitures { get; set; }
         public DbSet<Sale> Sales { get; set; }

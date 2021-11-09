@@ -18,16 +18,26 @@ namespace FurnitureSalesCompanyProject.Controllers
             {
                 contract.Customer = (Customer)user;
                 contract.Sales = sales;
-                
+
                 ContextStatic.FurnitureContext.Contracts.Add(contract);
                 ContextStatic.FurnitureContext.SaveChanges();
                 return true;
             }
             return false;
         }
+        public List<Contract> GetAllByCurrentUser()
+        {
+            var contracts = db.Contracts.Where(o => o.Customer.Login == CurrentUser.User.Login).Select(o => o).ToList();
+            return contracts;
+        }
+        public List<Contract> GetAllByUserLogin(string login)
+        {
+            var contracts = db.Contracts.Where(c => c.Customer.Login == login).ToList();
+            return contracts;
+        }
         public List<Contract> GetAll()
         {
-            var contracts = db.Contracts.Where(o => o.Customer.Login == CurrentUser.User.Login).Select(o => o).ToList();    
+            var contracts = db.Contracts.ToList();
             return contracts;
         }
     }

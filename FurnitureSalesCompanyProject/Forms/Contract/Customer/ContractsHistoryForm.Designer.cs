@@ -45,7 +45,7 @@ namespace FurnitureSalesCompanyProject.Forms
             this.dgvContracts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvContracts.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvContracts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvContracts.Location = new System.Drawing.Point(0, 23);
+            this.dgvContracts.Location = new System.Drawing.Point(0, 36);
             this.dgvContracts.Name = "dgvContracts";
             this.dgvContracts.ReadOnly = true;
             this.dgvContracts.RowTemplate.Height = 25;
@@ -61,10 +61,10 @@ namespace FurnitureSalesCompanyProject.Forms
             this.dgvSales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSales.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSales.Location = new System.Drawing.Point(0, 221);
+            this.dgvSales.Location = new System.Drawing.Point(0, 236);
             this.dgvSales.Name = "dgvSales";
             this.dgvSales.ReadOnly = true;
-            this.dgvSales.Size = new System.Drawing.Size(684, 194);
+            this.dgvSales.Size = new System.Drawing.Size(684, 203);
             this.dgvSales.TabIndex = 0;
             // 
             // cbIsApproved
@@ -80,12 +80,13 @@ namespace FurnitureSalesCompanyProject.Forms
             // 
             // btnUpdateData
             // 
+            this.btnUpdateData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUpdateData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(61)))), ((int)(((byte)(71)))));
             this.btnUpdateData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateData.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnUpdateData.Location = new System.Drawing.Point(517, 0);
+            this.btnUpdateData.Location = new System.Drawing.Point(492, 0);
             this.btnUpdateData.Name = "btnUpdateData";
-            this.btnUpdateData.Size = new System.Drawing.Size(167, 23);
+            this.btnUpdateData.Size = new System.Drawing.Size(192, 30);
             this.btnUpdateData.TabIndex = 2;
             this.btnUpdateData.Text = "Обновить данные";
             this.btnUpdateData.UseVisualStyleBackColor = false;

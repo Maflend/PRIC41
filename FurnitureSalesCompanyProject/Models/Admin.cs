@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FurnitureSalesCompanyProject.Models
 {
-   public class Stuff : User
+    public class Admin : User
     {
     }
 }

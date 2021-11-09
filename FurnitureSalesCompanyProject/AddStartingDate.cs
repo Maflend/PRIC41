@@ -32,13 +32,15 @@ namespace FurnitureSalesCompanyProject
             Customer customer1 = new Customer() {Login = "customer1", Password = "customer1", Code = Guid.NewGuid(), Name ="ООО СельхозКолхоз", Address= "ул. Юнатова, д.5", Phone ="+79551567896"};
             Customer customer2 = new Customer() { Login = "customer2", Password = "customer2", Code = Guid.NewGuid(), Name = "ООО СмолГу", Address = "ул. Дзержинского, д.12", Phone = "+79429981541" };
             db.AddRange(customer1, customer2);
-            Stuff stuff1 = new Stuff() {Login = "Stuff", Password = "Stuff" };
-            db.AddRange(stuff1);
+            Employee employee1 = new Employee() {Login = "Employee", Password = "Employee" };
+            db.AddRange(employee1);
 
+            Admin admin = new Admin() {Login = "Admin", Password = "Admin", Discriminator = "Admin" };
+            db.AddRange(admin);
             Contract contract1 = new Contract()
-            { IsApproved = true, RegistrationDate = new DateTime(2021,8,13), DateOfExecution= new DateTime(2021, 9, 29), Sales = new List<Sale>() {sale1,sale2 }, Customer = customer1 };
+            { IsApproved = true, RegistrationDate = new DateTime(2021,8,13), DateOfExecution= new DateTime(2021, 9, 29).Date, Sales = new List<Sale>() {sale1,sale2 }, Customer = customer1 };
             Contract contract2 = new Contract() 
-            { IsApproved = true, RegistrationDate = new DateTime(2021, 9, 20), DateOfExecution = new DateTime(2021, 9, 28), Sales = new List<Sale>() { sale3 }, Customer = customer2 };
+            { IsApproved = true, RegistrationDate = new DateTime(2021, 9, 20), DateOfExecution = new DateTime(2021, 9, 28).Date, Sales = new List<Sale>() { sale3 }, Customer = customer2 };
             db.AddRange(contract1,contract2);
 
             db.SaveChanges();

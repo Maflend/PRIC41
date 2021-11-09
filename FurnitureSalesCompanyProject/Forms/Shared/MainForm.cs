@@ -1,4 +1,5 @@
-﻿using FurnitureSalesCompanyProject.StaticData;
+﻿using FurnitureSalesCompanyProject.Models;
+using FurnitureSalesCompanyProject.StaticData;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,13 +27,24 @@ namespace FurnitureSalesCompanyProject.Forms
             {
                 btnOpenCustomersForm.Visible = false;
                 btnOpenContructsForm.Visible = false;
+                
             }
             if (CurrentUser.isCustomer == false)
             {
                 btnOpenCartForm.Visible = false;
                 btnOpenContractsHistoryForm.Visible = false;
+                btnOpenCustomersForm.Visible = false;
             }
-            this.Text += $"\t ( {CurrentUser.User.Login} )";
+            if(CurrentUser.isAdmin == true)
+            {
+                btnOpenFurnituresForm.Visible = false;
+                btnOpenContructsForm.Visible = false;
+                btnOpenCartForm.Visible = false;
+                btnOpenContractsHistoryForm.Visible = false;
+                btnOpenCustomersForm.Visible = true;
+            }
+            if(CurrentUser.User != null)
+                this.Text += $"\t ( {CurrentUser.User.Login} )";
         }
         private void btnCustomers_MouseHover(object sender, EventArgs e)
         {
@@ -111,5 +123,12 @@ namespace FurnitureSalesCompanyProject.Forms
             ActivateButton(sender);
             OpenChildForm(new ContractsHistoryForm(), sender);
         }
+
+        private void btnOpenContructsForm_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            OpenChildForm(new ContractsForm(), sender);
+        }
+
     }
 }

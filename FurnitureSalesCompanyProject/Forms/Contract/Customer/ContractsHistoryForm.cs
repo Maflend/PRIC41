@@ -40,7 +40,7 @@ namespace FurnitureSalesCompanyProject.Forms
         private void GetContractsFromController()
         {
             ContractController controller = new ContractController();
-            currentContracts = controller.GetAll();
+            currentContracts = controller.GetAllByCurrentUser();
         }
         private void SetData_dgvContracts()
         {

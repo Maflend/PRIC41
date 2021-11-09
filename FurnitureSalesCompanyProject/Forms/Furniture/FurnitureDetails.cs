@@ -46,6 +46,8 @@ namespace FurnitureSalesCompanyProject.Forms
             }
             SetDataInUserControls(id, name);
             currentFurniture = ContextStatic.FurnitureContext.Furnitures.FirstOrDefault(f => f.Id == id);
+            var currentCategory = ContextStatic.FurnitureContext.Furnitures.Where(f => f.Id == id).Select(f => f.Category).FirstOrDefault();
+            currentFurniture.Category = currentCategory;
         }
 
         private void FurnitureDetails_Load(object sender, EventArgs e)
