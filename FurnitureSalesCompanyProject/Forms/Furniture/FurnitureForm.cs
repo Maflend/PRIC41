@@ -28,6 +28,10 @@ namespace FurnitureSalesCompanyProject.Forms
                 btnCreateProduct.Visible = false;
             }
         }
+        public delegate void FurnitureSaless(int count);
+        public event FurnitureSaless FurnitureSold;
+
+
         private void FurnitureForm_Load(object sender, EventArgs e)
         {
             GetData();
@@ -63,6 +67,7 @@ namespace FurnitureSalesCompanyProject.Forms
             furnitureDetails.ShowDialog();
             if (furnitureDetails.DialogResult == DialogResult.Yes)
             {
+                FurnitureSold?.Invoke(SaleStatic.Sales.Count);
                 GetData();
                 SetDataInDGV();
                 SetDataInComboBox();

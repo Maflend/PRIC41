@@ -23,6 +23,7 @@ namespace FurnitureSalesCompanyProject.Forms
         private void MainForm_Load(object sender, EventArgs e)
         {
             StartApplication();
+            SetCounter(0);
             if (CurrentUser.isCustomer == true)
             {
                 btnOpenCustomersForm.Visible = false;
@@ -53,7 +54,14 @@ namespace FurnitureSalesCompanyProject.Forms
         private void btnOpenFurnituresForm_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            OpenChildForm(new FurnitureForm(), sender);
+            var furnitureForm = new FurnitureForm();
+            OpenChildForm(furnitureForm, sender);
+            furnitureForm.FurnitureSold += SetCounter;
+        }
+        
+        private void SetCounter(int count)
+        {
+            btnOpenCartForm.Text = $"   Корзина ({count})";
         }
         private void btnOpenCustomersForm_Click(object sender, EventArgs e)
         {
@@ -101,6 +109,7 @@ namespace FurnitureSalesCompanyProject.Forms
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            SaleStatic.Sales = new List<Sale>();
             this.DialogResult = DialogResult.Retry;
             this.Close();
         }
@@ -115,9 +124,11 @@ namespace FurnitureSalesCompanyProject.Forms
         private void btnOpenCartForm_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            OpenChildForm(new CartForm(), sender);
+            var cartForm = new CartForm();
+            cartForm.Click_btnResetCart += SetCounter;
+            OpenChildForm(cartForm, sender);
         }
-
+        
         private void btnOpenContractsHistoryForm_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);

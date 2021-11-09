@@ -19,7 +19,8 @@ namespace FurnitureSalesCompanyProject.Forms
         {
             InitializeComponent();
         }
-
+        public delegate void ResetCart(int count);
+        public event ResetCart Click_btnResetCart;
         private void CartForm_Load(object sender, EventArgs e)
         {
             SetData();
@@ -38,6 +39,7 @@ namespace FurnitureSalesCompanyProject.Forms
                     {
                         SaleStatic.Sales = new List<Sale>();
                         MessageBox.Show("Продукт куплен");
+                        Click_btnResetCart.Invoke(0);
                         SetData();
                     }
                 }
@@ -47,6 +49,7 @@ namespace FurnitureSalesCompanyProject.Forms
         private void btnResetCart_Click(object sender, EventArgs e)
         {
             SaleStatic.Sales = new List<Sale>();
+            Click_btnResetCart.Invoke(0);
             SetData();
         }
         private void SetData()

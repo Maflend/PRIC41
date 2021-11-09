@@ -31,6 +31,7 @@ namespace FurnitureSalesCompanyProject.Forms
                 tbCost.ReadOnly = true;
                 btnCancel.Visible = false;
                 btnSave.Visible = false;
+                btnDelete.Visible = false;
 
                 windowsSize = new Size(259, 340);
                 this.MaximumSize = windowsSize;
@@ -66,23 +67,29 @@ namespace FurnitureSalesCompanyProject.Forms
         {
             if (int.TryParse(tbQuantity.Text, out int quantity))
             {
-
-                if (SaleStatic.Sales != null && SaleStatic.Sales.Any(s => s.Furniture.Id == currentFurniture.Id))
+                if (quantity != 0)
                 {
-                    for (int i = 0; i < SaleStatic.Sales.Count(); i++)
+
+                    if (SaleStatic.Sales != null && SaleStatic.Sales.Any(s => s.Furniture.Id == currentFurniture.Id))
                     {
-                        if (SaleStatic.Sales[i].Furniture.Id == currentFurniture.Id)
+                        for (int i = 0; i < SaleStatic.Sales.Count(); i++)
                         {
-                            SaleStatic.Sales[i].Quantity = quantity;
+                            if (SaleStatic.Sales[i].Furniture.Id == currentFurniture.Id)
+                            {
+                                SaleStatic.Sales[i].Quantity = quantity;
+                            }
                         }
                     }
+                    else
+                    {
+                        Sale sale = new Sale() { Furniture = currentFurniture, Quantity = quantity };
+                        SaleStatic.Sales.Add(sale);
+                    }
+                    this.DialogResult = DialogResult.Yes;
                 }
                 else
-                {
-                    Sale sale = new Sale() { Furniture = currentFurniture, Quantity = quantity };
-                    SaleStatic.Sales.Add(sale);
-                }
-                this.DialogResult = DialogResult.Retry;
+                    lblAnswer.Text = "Кол-во ноль!!!";
+
             }
         }
 
