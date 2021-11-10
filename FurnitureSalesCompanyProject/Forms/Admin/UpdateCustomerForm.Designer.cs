@@ -42,12 +42,16 @@ namespace FurnitureSalesCompanyProject.Forms
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(219, 181);
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(61)))), ((int)(((byte)(71)))));
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnSave.Location = new System.Drawing.Point(222, 136);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(115, 37);
+            this.btnSave.Size = new System.Drawing.Size(124, 37);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Сохранить";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label1
@@ -119,7 +123,7 @@ namespace FurnitureSalesCompanyProject.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(346, 230);
+            this.ClientSize = new System.Drawing.Size(346, 174);
             this.Controls.Add(this.tbPhone);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tbAddress);
@@ -129,8 +133,11 @@ namespace FurnitureSalesCompanyProject.Forms
             this.Controls.Add(this.tbCode);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSave);
+            this.MaximumSize = new System.Drawing.Size(362, 213);
+            this.MinimumSize = new System.Drawing.Size(362, 213);
             this.Name = "UpdateCustomerForm";
-            this.Text = "UpdateCustomerForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Редактирование";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UpdateCustomerForm_FormClosing);
             this.Load += new System.EventHandler(this.UpdateCustomerForm_Load);
             this.ResumeLayout(false);

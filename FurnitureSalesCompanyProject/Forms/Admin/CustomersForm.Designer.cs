@@ -56,7 +56,7 @@ namespace FurnitureSalesCompanyProject.Forms
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dgvCustomers);
             this.Name = "CustomersForm";
-            this.Text = "CustomersForm";
+            this.Text = "Клиенты";
             this.Load += new System.EventHandler(this.CustomersForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).EndInit();
             this.ResumeLayout(false);

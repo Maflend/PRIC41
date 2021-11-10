@@ -44,71 +44,81 @@
             // 
             // btnToApprove
             // 
-            this.btnToApprove.Location = new System.Drawing.Point(305, 386);
+            this.btnToApprove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(61)))), ((int)(((byte)(71)))));
+            this.btnToApprove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnToApprove.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnToApprove.Location = new System.Drawing.Point(312, 381);
             this.btnToApprove.Name = "btnToApprove";
-            this.btnToApprove.Size = new System.Drawing.Size(155, 47);
+            this.btnToApprove.Size = new System.Drawing.Size(148, 38);
             this.btnToApprove.TabIndex = 0;
             this.btnToApprove.Text = "Одобрить";
-            this.btnToApprove.UseVisualStyleBackColor = true;
+            this.btnToApprove.UseVisualStyleBackColor = false;
             this.btnToApprove.Click += new System.EventHandler(this.btnToApprove_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(12, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 15);
+            this.label1.Size = new System.Drawing.Size(57, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Номер";
             // 
             // tbNumber
             // 
-            this.tbNumber.Location = new System.Drawing.Point(233, 6);
+            this.tbNumber.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbNumber.Location = new System.Drawing.Point(233, 2);
             this.tbNumber.Name = "tbNumber";
             this.tbNumber.ReadOnly = true;
-            this.tbNumber.Size = new System.Drawing.Size(227, 23);
+            this.tbNumber.Size = new System.Drawing.Size(227, 27);
             this.tbNumber.TabIndex = 3;
             // 
             // tbRegistrationDate
             // 
-            this.tbRegistrationDate.Location = new System.Drawing.Point(233, 35);
+            this.tbRegistrationDate.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbRegistrationDate.Location = new System.Drawing.Point(233, 32);
             this.tbRegistrationDate.Name = "tbRegistrationDate";
             this.tbRegistrationDate.ReadOnly = true;
-            this.tbRegistrationDate.Size = new System.Drawing.Size(227, 23);
+            this.tbRegistrationDate.Size = new System.Drawing.Size(227, 27);
             this.tbRegistrationDate.TabIndex = 3;
             // 
             // tbCustomerName
             // 
+            this.tbCustomerName.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbCustomerName.Location = new System.Drawing.Point(241, 270);
             this.tbCustomerName.Name = "tbCustomerName";
             this.tbCustomerName.ReadOnly = true;
-            this.tbCustomerName.Size = new System.Drawing.Size(219, 23);
+            this.tbCustomerName.Size = new System.Drawing.Size(219, 27);
             this.tbCustomerName.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 38);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(12, 35);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 15);
+            this.label2.Size = new System.Drawing.Size(129, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Дата заключения";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 355);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(12, 330);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 15);
+            this.label3.Size = new System.Drawing.Size(130, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Дата исполнения";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(12, 273);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(147, 15);
+            this.label4.Size = new System.Drawing.Size(189, 20);
             this.label4.TabIndex = 2;
             this.label4.Text = "Наименование заказчика";
             // 
@@ -126,8 +136,9 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(241, 349);
+            this.dateTimePicker1.Location = new System.Drawing.Point(241, 328);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(219, 23);
             this.dateTimePicker1.TabIndex = 5;
@@ -135,19 +146,22 @@
             // 
             // btnShowCustomerDetails
             // 
-            this.btnShowCustomerDetails.Location = new System.Drawing.Point(357, 293);
+            this.btnShowCustomerDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(61)))), ((int)(((byte)(71)))));
+            this.btnShowCustomerDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowCustomerDetails.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnShowCustomerDetails.Location = new System.Drawing.Point(357, 297);
             this.btnShowCustomerDetails.Name = "btnShowCustomerDetails";
             this.btnShowCustomerDetails.Size = new System.Drawing.Size(103, 23);
             this.btnShowCustomerDetails.TabIndex = 6;
-            this.btnShowCustomerDetails.Text = "Подробнее";
-            this.btnShowCustomerDetails.UseVisualStyleBackColor = true;
+            this.btnShowCustomerDetails.Text = "Подробнее...";
+            this.btnShowCustomerDetails.UseVisualStyleBackColor = false;
             this.btnShowCustomerDetails.Click += new System.EventHandler(this.btnShowCustomerDetails_Click);
             // 
             // ContractDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(461, 435);
+            this.ClientSize = new System.Drawing.Size(461, 419);
             this.Controls.Add(this.btnShowCustomerDetails);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.dgvSalesWithFurniture);
@@ -161,7 +175,7 @@
             this.Controls.Add(this.btnToApprove);
             this.Name = "ContractDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "ContractDetails";
+            this.Text = "Детали договора";
             this.Load += new System.EventHandler(this.ContractDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalesWithFurniture)).EndInit();
             this.ResumeLayout(false);

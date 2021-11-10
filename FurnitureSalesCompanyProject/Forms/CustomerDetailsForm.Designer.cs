@@ -79,7 +79,7 @@
             this.MinimumSize = new System.Drawing.Size(289, 244);
             this.Name = "CustomerDetailsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "CustomerDetailsForm";
+            this.Text = "Детали клиента";
             this.Load += new System.EventHandler(this.CustomerDetailsForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

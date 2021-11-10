@@ -42,12 +42,16 @@ namespace FurnitureSalesCompanyProject.Forms
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(212, 224);
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(61)))), ((int)(((byte)(71)))));
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAdd.Location = new System.Drawing.Point(195, 198);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(110, 34);
+            this.btnAdd.Size = new System.Drawing.Size(122, 37);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Добавить";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label1
@@ -121,7 +125,7 @@ namespace FurnitureSalesCompanyProject.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 270);
+            this.ClientSize = new System.Drawing.Size(318, 239);
             this.Controls.Add(this.cbCategory);
             this.Controls.Add(this.tbCost);
             this.Controls.Add(this.label4);
@@ -131,8 +135,11 @@ namespace FurnitureSalesCompanyProject.Forms
             this.Controls.Add(this.tbName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAdd);
+            this.MaximumSize = new System.Drawing.Size(334, 278);
+            this.MinimumSize = new System.Drawing.Size(334, 278);
             this.Name = "CreateProductForm";
-            this.Text = "CreateProductForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Добавление мебели";
             this.Load += new System.EventHandler(this.CreateProductForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

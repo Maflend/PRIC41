@@ -36,12 +36,15 @@
             // btnChangeIsApproved
             // 
             this.btnChangeIsApproved.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnChangeIsApproved.Location = new System.Drawing.Point(490, 3);
+            this.btnChangeIsApproved.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(61)))), ((int)(((byte)(71)))));
+            this.btnChangeIsApproved.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeIsApproved.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnChangeIsApproved.Location = new System.Drawing.Point(486, -1);
             this.btnChangeIsApproved.Name = "btnChangeIsApproved";
-            this.btnChangeIsApproved.Size = new System.Drawing.Size(193, 42);
+            this.btnChangeIsApproved.Size = new System.Drawing.Size(199, 40);
             this.btnChangeIsApproved.TabIndex = 0;
             this.btnChangeIsApproved.Text = "Показать подтвержденные";
-            this.btnChangeIsApproved.UseVisualStyleBackColor = true;
+            this.btnChangeIsApproved.UseVisualStyleBackColor = false;
             this.btnChangeIsApproved.Click += new System.EventHandler(this.btnChangeIsApproved_Click);
             // 
             // dgvContracts
@@ -50,11 +53,11 @@
             this.dgvContracts.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvContracts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvContracts.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvContracts.Location = new System.Drawing.Point(0, 51);
+            this.dgvContracts.Location = new System.Drawing.Point(0, 39);
             this.dgvContracts.Name = "dgvContracts";
             this.dgvContracts.ReadOnly = true;
             this.dgvContracts.RowTemplate.Height = 25;
-            this.dgvContracts.Size = new System.Drawing.Size(684, 390);
+            this.dgvContracts.Size = new System.Drawing.Size(684, 402);
             this.dgvContracts.TabIndex = 1;
             this.dgvContracts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvContracts_CellClick);
             // 
@@ -66,7 +69,7 @@
             this.Controls.Add(this.dgvContracts);
             this.Controls.Add(this.btnChangeIsApproved);
             this.Name = "ContractsForm";
-            this.Text = "ContractsForm";
+            this.Text = "Договоры";
             this.Load += new System.EventHandler(this.ContractsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvContracts)).EndInit();
             this.ResumeLayout(false);

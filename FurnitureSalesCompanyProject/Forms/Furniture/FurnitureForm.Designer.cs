@@ -65,7 +65,7 @@ namespace FurnitureSalesCompanyProject.Forms
             this.btnCreateProduct.FlatAppearance.BorderSize = 3;
             this.btnCreateProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateProduct.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCreateProduct.Location = new System.Drawing.Point(555, 17);
+            this.btnCreateProduct.Location = new System.Drawing.Point(564, 56);
             this.btnCreateProduct.Name = "btnCreateProduct";
             this.btnCreateProduct.Size = new System.Drawing.Size(117, 38);
             this.btnCreateProduct.TabIndex = 1;
@@ -147,7 +147,7 @@ namespace FurnitureSalesCompanyProject.Forms
             this.Controls.Add(this.panelFurnituriesMenu);
             this.Controls.Add(this.dgvFurnitures);
             this.Name = "FurnitureForm";
-            this.Text = "FurnitureForm";
+            this.Text = "Мебель";
             this.Load += new System.EventHandler(this.FurnitureForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFurnitures)).EndInit();
             this.panelFurnituriesMenu.ResumeLayout(false);

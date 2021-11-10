@@ -102,7 +102,7 @@ namespace FurnitureSalesCompanyProject.Forms
             this.Controls.Add(this.dgvSales);
             this.Controls.Add(this.dgvContracts);
             this.Name = "ContractsHistoryForm";
-            this.Text = "ContractsHistoryForm";
+            this.Text = "История договоров";
             this.Load += new System.EventHandler(this.ContractsHistoryForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvContracts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSales)).EndInit();
