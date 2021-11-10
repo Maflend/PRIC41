@@ -47,7 +47,7 @@ namespace FurnitureSalesCompanyProject.Forms
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(61)))), ((int)(((byte)(71)))));
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSave.Location = new System.Drawing.Point(126, 223);
+            this.btnSave.Location = new System.Drawing.Point(122, 223);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(106, 32);
             this.btnSave.TabIndex = 1;
@@ -60,7 +60,7 @@ namespace FurnitureSalesCompanyProject.Forms
             this.btnBuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(61)))), ((int)(((byte)(71)))));
             this.btnBuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuy.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnBuy.Location = new System.Drawing.Point(126, 261);
+            this.btnBuy.Location = new System.Drawing.Point(122, 261);
             this.btnBuy.Name = "btnBuy";
             this.btnBuy.Size = new System.Drawing.Size(106, 32);
             this.btnBuy.TabIndex = 1;
@@ -117,7 +117,7 @@ namespace FurnitureSalesCompanyProject.Forms
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(61)))), ((int)(((byte)(71)))));
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnCancel.Location = new System.Drawing.Point(12, 223);
+            this.btnCancel.Location = new System.Drawing.Point(7, 223);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(106, 32);
             this.btnCancel.TabIndex = 1;
@@ -128,10 +128,10 @@ namespace FurnitureSalesCompanyProject.Forms
             // lblAnswer
             // 
             this.lblAnswer.AutoSize = true;
-            this.lblAnswer.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblAnswer.Location = new System.Drawing.Point(126, 201);
+            this.lblAnswer.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblAnswer.Location = new System.Drawing.Point(122, 205);
             this.lblAnswer.Name = "lblAnswer";
-            this.lblAnswer.Size = new System.Drawing.Size(58, 19);
+            this.lblAnswer.Size = new System.Drawing.Size(49, 15);
             this.lblAnswer.TabIndex = 0;
             this.lblAnswer.Text = "Answer";
             // 
@@ -140,7 +140,7 @@ namespace FurnitureSalesCompanyProject.Forms
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(61)))), ((int)(((byte)(71)))));
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDelete.Location = new System.Drawing.Point(12, 185);
+            this.btnDelete.Location = new System.Drawing.Point(7, 185);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(106, 32);
             this.btnDelete.TabIndex = 1;
@@ -152,7 +152,7 @@ namespace FurnitureSalesCompanyProject.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(243, 301);
+            this.ClientSize = new System.Drawing.Size(238, 299);
             this.Controls.Add(this.tbQuantity);
             this.Controls.Add(this.tbCost);
             this.Controls.Add(this.tbSpecifications);
@@ -164,9 +164,11 @@ namespace FurnitureSalesCompanyProject.Forms
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblAnswer);
             this.Controls.Add(this.lblQuantity);
+            this.MaximumSize = new System.Drawing.Size(254, 338);
+            this.MinimumSize = new System.Drawing.Size(254, 338);
             this.Name = "FurnitureDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "FurnitureDetails";
+            this.Text = "Детали мебели";
             this.Load += new System.EventHandler(this.FurnitureDetails_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
